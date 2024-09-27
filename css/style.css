@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+
+* {
+    background-color: #111011;
+    color: #FFFFFF;
+    text-align: center;
+    align-content: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    padding: 10% 10%;
+    padding-bottom: 5%;
+}
+
+.subheader {
+    color: #767676;
+}
+
+h1 {
+    position: relative;
+    font-size: 5vmax;
+    white-space: nowrap ;
+}
+
+p {
+    position: relative
+}
+
+main {
+    margin: 10% 0;
+}
+
+footer {
+    padding: 0 5%;
+    font-size: 1.75vmin;
+}
+
+a:link, a:visited {
+    color: #ffcf88;
+}
+
+a:hover {
+    color: #ffcf88;
+    text-decoration: none;
+}
+
+.logo {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.error {
+    font-size: 12vmin;
+}
+
+.footer {
+    
+    color: #887f8a;
+    line-height: 2.5em;
+}
+
+p .subheader {
+    color: #887f8a;
+    font-weight: 100;
+    font-style: italic;
+    font-size: 2.5vmin
+}
+
+.accent {
+    color: #887f8a;
+}
+
+
+.images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.lunauiBold {
+    font-weight: bold;
+    color: #ffcf88
+}
+
+.blinking {
+    animation: blink 1s ease-in-out infinite;
+    opacity: 1
+}
+
+.pulse {
+     /* Chrome, Safari, Opera */
+     -webkit-animation: pulseAnimate 1s infinite; 
+  
+     /* Firefox */
+     -moz-animation: pulseAnimate 1s infinite;
+  
+     /* Standard Syntax */
+     animation: pulseAnimate 1.25s infinite; 
+}
+
+@-webkit-keyframes pulseAnimate {
+    100% {
+        opacity: 0.4;
+    }
+}
+
+@-moz-keyframes pulseAnimate {
+    100% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes pulseAnimate {
+    100% {
+        opacity: 0.4;
+    }
+}
+
+section .animate {
+    transition: 1s;
+    filter: blur(5px);
+    
+}
+
+section.show-animate .animate {
+    filter: blur(0);
+}
+
+.sec-1 .animate {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.sec-1.show-animate .animate {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sec-2 .animate {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.sec-2.show-animate .animate {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sec-3 .images img {
+    width: 100px;
+    margin: 0 30px;
+    transform: translateX(100%);
+    transition-delay: calc(.2s * var(--i));
+    opacity: 0;
+}
+
+.sec-3 .animate {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+.sec-3.show-animate .images img {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sec-3.show-animate .animate {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.sec-4 .animate {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.sec-4.show-animate .animate {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* 
+Commented out until i figure out whats wrong on safari
+
+.sec-4 .showRight-animate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background:#ffcf88;
+    transition: 1s;
+    transition-delay: calc(.2s * var(--i));
+}
+
+.sec-4.show-animate .showRight-animate {
+    width: 0;
+} 
+
+*/
+
+.sec-5 .animate {
+    opacity: 0;
+}
+
+.sec-5.show-animate .animate {
+    opacity: 1;
+}
+
+
+
+@keyframes blink {
+    0% {
+        opacity: 1.0;
+    }
+  
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+
+  }
+
+@-webkit-keyframes blink {
+    0% {
+        opacity: 1.0;
+    }
+  
+    50% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 1.0;
+    }
+}
