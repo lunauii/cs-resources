@@ -1,6 +1,6 @@
 ---
 label: COMM 2216
-icon: question
+icon: briefcase
 order: 9
 ---
 # Business Communications 2
