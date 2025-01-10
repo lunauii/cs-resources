@@ -1,11 +1,11 @@
 input: .
 output: .retype
-url: https://bcit.lunaui.cc/ # Add your website address here
+url: bcit.lunaui.cc # Add your website address here
 branding:
-  title: 'CST: Redux'
-  label: 0.1-beta
+  title: 'BCITCS: Redux'
+  label: 2025.1
 links:
-- text: Github
+- text: ':icon-mark-github: Github'
   link: https://github.com/lunauii/bcit-resources
 footer:
-  copyright: "Lunaui &copy; Copyright {{ year }}. All rights reserved."
+  copyright: "lunaui powered, {{ year }}."
