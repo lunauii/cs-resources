@@ -3,7 +3,7 @@ icon: alert
 label: COMP 1712
 ---
 
-# Business Analysis and System Design c
+# Business Analysis and System Design
 
 !!!danger
 This guide is **deprecated** and has been succeeded by the *COMP 1712 Bible*.
