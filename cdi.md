@@ -32,12 +32,12 @@ Courses in this CDI category are usually relatively easy classes and/or have ama
 **Normal**<br>
 Courses in this CDI category are of average difficulty, having moderate workload and study requirements.
 ==- :crescent_moon::crescent_moon::crescent_moon::crescent_moon: 
-[!badge variant="warning" text="3.5-4.2"] CDI
+[!badge variant="warning" text="3.5-4.0"] CDI
 
 **Tough**<br>
 Courses in this CDI category have higher than average difficulty, either having more complex topics or heavier workload than the previous ones.
 ==- :crescent_moon::crescent_moon::crescent_moon::crescent_moon::crescent_moon:
-[!badge variant="danger" text="4.3-5.0"] CDI
+[!badge variant="danger" text="4.1-5.0"] CDI
 
 **High Priority**<br>
 Courses in this CDI category are infamously hard classes relative to the term, being deeply complex in nature, requiring large amounts of time dedicated to it, or both. A rough professor usually doesn't propel a course into this category, but it can be a pivoting factor. 

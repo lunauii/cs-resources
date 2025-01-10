@@ -6,7 +6,7 @@ order: 9
 # Business Communications 2
 ==- :crescent_moon::crescent_moon::crescent_moon: | [!badge variant="success" text="2.9"] CDI
 |||Load (55%)
-[!badge variant="danger" text="3.6"]
+[!badge variant="warning" text="3.6"]
 |||Complexity (30%)
 [!badge variant="success" text="2.5"]
 |||Strain (15%)

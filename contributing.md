@@ -91,7 +91,7 @@ Create a pull request with a meaningful title and description describing what yo
 If your changes get approved (it probably will), you will see your changes on the website take effect!
 
 !!!info Regular Contributors
-If you are a regular contributor or have made guides in the past for CST, ask me on Discord (`lunaui`) for Contributor access to the repository so that you can bypass me needing to approve your pull requests or even approve other's pull requests yourself!
+If you are a regular contributor or have made guides in the past for CST, ask me on Discord (`lunaui`) for **Collaborator** access to the repository so that you can bypass me needing to approve your pull requests or even approve other's pull requests yourself!
 !!!
 
 ## Editing guidelines
