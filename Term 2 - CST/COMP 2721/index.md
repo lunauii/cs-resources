@@ -5,13 +5,13 @@ order: 3
 ---
 
 # Computer Organization/Architecture
-==- :crescent_moon::crescent_moon::crescent_moon::crescent_moon: | [!badge variant="warning" text="3.8"] CDI
+==- :crescent_moon::crescent_moon::crescent_moon::crescent_moon: | [!badge variant="danger" text="4.2"] CDI
 |||Load (55%)
-[!badge variant="warning" text="3.8"]
-|||Complexity (30%)
-[!badge variant="danger" text="4.6"]
-|||Strain (15%)
-[!badge variant="primary" text="2.0"]
+[!badge variant="warning" text="4.2"]
+|||Complexity (35%)
+[!badge variant="danger" text="4.5"]
+|||Strain (10%)
+[!badge variant="primary" text="3.0"]
 |||
 [...what?](/cdi)
 ===
