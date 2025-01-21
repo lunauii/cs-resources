@@ -37,7 +37,9 @@ This page is a work in progress. Feel free to help contribute by creating a [pul
 **RAM** (aka **main memory**) - the memory of the computer
 
 # Logarithms and Powers of 2
-> We probably won't see *too* much of anything above tera- or below pico-, but it's good knowledge to know anyway
+!!! 
+We probably won't see *too* much of anything above tera- or below pico-, but it's good knowledge to know anyways.
+!!!
 
  2^n^   | 10^n^   | Prefix  | Signifier   | &nbsp;| 2^n^   | 10^n^  | Prefix  | Signifier 
  :---:  | :---:   | :---:   | :---:       |:---:  | :---:  | :---:  | :--:    | :---:       
