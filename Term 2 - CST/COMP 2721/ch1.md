@@ -110,9 +110,9 @@ Given four variables, $r, m, n, k$:
   $m$ = the power factor of a level's instructions\
   $n$ = the amount of level $r - 1$ instructions required to interpret a level-*r* instruction
 > * 1 level-$r$ instruction can do the work of $m$ level-($r - 1$) instructions
-> * 1 level-$r$ instruction gets converted into $n$ level-($r - 1$) instructions after translation/interpretation
+> * 1 level-$r$ instruction gets converted into $n$ level-($r - 1$) instructions after interpretation
 
-*Now, let's calculate how long a level-2 program takes.*
+Now, let's calculate how long a level-2 program takes.
 
 A level-1 program takes $k$ seconds to run.
 > $k$
