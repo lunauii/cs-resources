@@ -7,7 +7,10 @@ icon: rocket
 This page is a work in progress. Feel free to help contribute by creating a [pull request](https://github.com/lunauii/bcit-resources/pulls)!
 !!!
 
-# Terminology
+# Chapter 1: Introduction
+
+## Terminology
+
 **Bit** - a binary digit
 
 **Byte** - a group of 8 bits
@@ -34,37 +37,19 @@ This page is a work in progress. Feel free to help contribute by creating a [pul
 **RAM** (aka **main memory**) - the memory of the computer
 
 # Logarithms and Powers of 2
-// We probably won't see *too* much of anything above tera- or below pico-, but it's good knowledge to know anyway
-<table>
-<tr>
-<td>2^n</td><td>10^n</td><td>Prefix</td><td>Signifier</td>
-<td>2^n</td><td>10^n</td><td>Prefix</td><td>Signifier</td>
-</tr><tr>
-<td>10</td><td>3</td><td>kilo</td><td>k</td>
-<td>-10</td><td>-3</td><td>milli</td><td>m</td>
-</tr><tr>
-<td>20</td><td>6</td><td>mega</td><td>M</td>
-<td>-20</td><td>-6</td><td>micro</td><td>μ</td>
-</tr><tr>
-<td>30</td><td>9</td><td>giga</td><td>G</td>
-<td>-30</td><td>-9</td><td>nano</td><td>n</td>
-</tr><tr>
-<td>40</td><td>12</td><td>tera</td><td>T</td>
-<td>-40</td><td>-12</td><td>pico</td><td>p</td>
-</tr><tr>
-<td>50</td><td>15</td><td>peta</td><td>P</td>
-<td>-50</td><td>-15</td><td>femto</td><td>f</td>
-</tr><tr>
-<td>50</td><td>18</td><td>exa</td><td>E</td>
-<td>-50</td><td>-18</td><td>atto</td><td>a</td>
-</tr><tr>
-<td>60</td><td>21</td><td>zetta</td><td>Z</td>
-<td>-60</td><td>-21</td><td>zepto</td><td>z</td>
-</tr><tr>
-<td>70</td><td>24</td><td>yotta</td><td>Y</td>
-<td>-70</td><td>-24</td><td>yocto</td><td>y</td>
-</tr>
-</table>
+> We probably won't see *too* much of anything above tera- or below pico-, but it's good knowledge to know anyway
+
+ 2^n^   | 10^n^   | Prefix  | Signifier   | 2^n     | 10^n    | Prefix  | Signifier 
+ :---:  | :---:   | :---:   | :---:       | :---:   | :---:   | :--:    | :---:       
+ 10     |  3      | kilo    | k           | -10     | -3      | milli   | m  
+ 20     |  6      | mega    | M           | -20     | -6      | micro   | μ  
+ 30     |  9      | giga    | G           | -30     | -9      | nano    | n  
+ 40     |  12     | tera    | T           | -40     | -12     | pico    | p  
+ 50     |  15     | peta    | P           | -50     | -15     | femto   | f  
+ 60     |  18     | exa     | E           | -60     | -18     | atto    | a  
+ 70     |  21     | zetta   | Z           | -70     | -21     | zepto   | z  
+ 80     |  24     | yotta   | Y           | -80     | -24     | yocto   | y   
+  
 
 # Computer Architecture Layers
 5 - **Problem-Oriented Language Level**<br>
@@ -113,48 +98,53 @@ In order to convert between different language levels, we need to first convert 
 
 # Week 1 Question
 
-**Q4.** Consider a multilevel computer in which all the levels are different. Each level has instructions that are m times as powerful as those of the level below it; that is, one level r instruction can do the work of m level r − 1 instructions. If a level-1 program requires k seconds to run, how long would equivalent programs take at levels 2, 3, and 4, assuming n level r instructions are required to interpret a single r + 1 instruction?
+### Q4.
+>  Consider a multilevel computer in which all the levels are **different**. Each level has instructions that are $m$ times as powerful as those of the level below it; that is, **one level $r$ instruction can do the work of $m$ level $r − 1$ instructions**. If a level-1 program requires $k$ seconds to run, how long would equivalent programs take at levels 2, 3, and 4, assuming $n$ level $r$ instructions are required to interpret a single $r + 1$ instruction?
 
 The first step is to define all the variables in the question. From there, we can figure out how to solve it.
 
-Four variables: *r*, *m*, *t*, *k*\
-&nbsp;&nbsp;&nbsp;&nbsp;*r* = an arbitrary level in the computer\
-&nbsp;&nbsp;&nbsp;&nbsp;k = the amount of seconds for a level-1 program to run\
-&nbsp;&nbsp;&nbsp;&nbsp;*m* = the power factor of a level's instructions\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 level-*r* instruction can do the work of *m* level-(*r - 1*) instructions\
-&nbsp;&nbsp;&nbsp;&nbsp;*n* = the amount of level-*r - 1* instructions required to interpret a level-*r* instruction\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1 level-*r* instruction gets converted into *n* level-(*r - 1*) instructions after translation/interpretation
+Given four variables, $r, m, n, k$:
 
-Now, let's calculate how long a level-2 program takes.
+> $r$ = an arbitrary level in the computer\
+  $k$ = the amount of seconds for a level-1 program to run\
+  $m$ = the power factor of a level's instructions\
+  $n$ = the amount of level $r - 1$ instructions required to interpret a level-*r* instruction
+> * 1 level-$r$ instruction can do the work of $m$ level-($r - 1$) instructions
+> * 1 level-$r$ instruction gets converted into $n$ level-($r - 1$) instructions after translation/interpretation
 
-&nbsp;&nbsp;&nbsp;&nbsp;A level-1 program takes *k* seconds to run.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*k*
+*Now, let's calculate how long a level-2 program takes.*
 
-&nbsp;&nbsp;&nbsp;&nbsp;A level-2 instruction first has to be converted into level-1 instructions before being executed.\
-&nbsp;&nbsp;&nbsp;&nbsp;One level-2 instruction gets converted into *n* level-1 instructions.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*n \* k*
+A level-1 program takes $k$ seconds to run.
+> $k$
 
-&nbsp;&nbsp;&nbsp;&nbsp;The execution of these instructions then gets sped up by our power factor, *m*.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(n / m) \* k*
+A level-2 instruction first has to be converted into level-1 instructions before being executed.
 
-&nbsp;&nbsp;&nbsp;&nbsp;One level-2 program will take *(n / m) \* k* seconds to run.
+One level-2 instruction gets converted into $n$ level-1 instructions.
+> $n * k$
+
+The execution of these instructions then gets sped up by our power factor, $m$.
+> $\frac{n}{m} * k$
+
+**One level-2 program will take $\frac{n}{m} * k$ seconds to run.**
 
 We can use the same logic to calculate how long a level-3 program takes.
 
-&nbsp;&nbsp;&nbsp;&nbsp;A level-2 program takes *(n / m) \* k* seconds to run.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(n / m) \* k*
+A level-2 program takes $\frac{n}{m} * k$ seconds to run.
+> $\frac{n}{m} * k$
 
-&nbsp;&nbsp;&nbsp;&nbsp;A level-3 instruction first has to be converted into *n* level-2 instructions before being executed.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(n / m) \* n \* k*
+A level-3 instruction first has to be converted into $n$ level-2 instructions before being executed.
+> $\frac{n}{m} * n * k$
 
-&nbsp;&nbsp;&nbsp;&nbsp;The execution of these instructions then gets sped up by our power factor, *m*.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(n / m) \* (n / m) \* k*\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(n / m)<sup>2</sup> \* k*
+The execution of these instructions then gets sped up by our power factor, $m$.
+> $\frac{n}{m} * \frac{n}{m} * k$\
+  <br>
+  $(\frac{n}{m})^2 * k$
 
-&nbsp;&nbsp;&nbsp;&nbsp;One level-2 program will take *(n / m)<sup>2</sup> \* k* seconds to run.
+One level-2 program will take $(\frac{n}{m})^2 * k$ seconds to run.
 
-Notice that, for a level-3 program, the degree of *(n / m)* is equal to 2.\
-For a level-2 program, the degree of *(n / m)* is equal to 1.\
-We can generalize this to say that for a level-*r* program, the degree of *(n / m)* is equal to *r - 1*.\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(n / m)<sup>r - 1</sup> \* k*\
+Notice that, for a level-3 program, the degree of $\frac{n}{m}$ is equal to 2.\
+For a level-2 program, the degree of $\frac{n}{m}$ is equal to 1.\
+We can generalize this to say that for a level-$r$ program, the degree of $\frac{n}{m}$ is equal to $r - 1$.
+> $\frac{n}{m}^{r - 1} * k$
+
 This is how we get the formula!

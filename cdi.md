@@ -9,7 +9,7 @@ The information on this page is largely based on opinion. It may not fully refle
 The **Crescent Difficulty Index** (CDI) is an informal unit of measuring a course's difficulty based on 3 factors.
 ## Factors
 ### Load (55%)
-> This factor is influenced by how often and clustered coursework such as quizzes, labs, assignments, and projects are as well as how long it averagely takes to complete them. For group projects, it is also determined by how often each group member needs to spend on it per week. It is the highest weighted factor of the three.
+> This factor is influenced by how often and clustered coursework such as quizzes, labs, assignments, and projects are as well as how long it averagely takes to complete them. It also takes into account how much of the textbook you need to study in order outside of lectures in order to succeed in quizzes and tests. For group projects, it is also determined by how often each group member needs to spend on it per week. It is the highest weighted factor of the three.
 ### Complexity (30%)
 > This factor is influenced by how difficult the material in a course is relative to a student without prior experience in the field, as well as how difficult the topic is in general.
 ### Strain (15%)
