@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790733935422">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.790751681385">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Terminology</title>
-    <meta name="title" content="Terminology">
+    <title>Chapter 1: Introduction</title>
+    <meta name="title" content="Chapter 1: Introduction">
     <meta name="description" content="WIP This page is a work in progress. Feel free to help contribute by creating a pull request!">
 
     <!-- Canonical -->
@@ -19,22 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://bcit.lunaui.cc/term-2-cst/comp-2721/ch1/">
-    <meta property="og:title" content="Terminology">
+    <meta property="og:title" content="Chapter 1: Introduction">
     <meta property="og:description" content="WIP This page is a work in progress. Feel free to help contribute by creating a pull request!">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://bcit.lunaui.cc/term-2-cst/comp-2721/ch1/">
-    <meta property="twitter:title" content="Terminology">
+    <meta property="twitter:title" content="Chapter 1: Introduction">
     <meta property="twitter:description" content="WIP This page is a work in progress. Feel free to help contribute by creating a pull request!">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.790733935422" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.790751681385" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.790733935422" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.790751681385" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.790733935422" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.790751681385" data-turbo-eval="false" defer></script>
+    <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -180,11 +182,17 @@ This page is a work in progress. Feel free to help contribute by creating a <a h
         </div>
     </div>
 </div>
-<doc-anchor-target id="terminology" class="break-words">
+<doc-anchor-target id="chapter-1-introduction" class="break-words">
     <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chapter-1-introduction">#</doc-anchor-trigger>
+        <span>Chapter 1: Introduction</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="terminology">
+    <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#terminology">#</doc-anchor-trigger>
         <span>Terminology</span>
-    </h1>
+    </h2>
 </doc-anchor-target>
 <p><strong>Bit</strong> - a binary digit</p>
 <p><strong>Byte</strong> - a group of 8 bits</p>
@@ -215,37 +223,107 @@ This page is a work in progress. Feel free to help contribute by creating a <a h
         <span>Logarithms and Powers of 2</span>
     </h1>
 </doc-anchor-target>
-<p>// We probably won&#x27;t see <em>too</em> much of anything above tera- or below pico-, but it&#x27;s good knowledge to know anyway</p>
-<table>
+<blockquote>
+<p>We probably won&#x27;t see <em>too</em> much of anything above tera- or below pico-, but it&#x27;s good knowledge to know anyway</p>
+</blockquote>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
 <tr>
-<td>2^n</td><td>10^n</td><td>Prefix</td><td>Signifier</td>
-<td>2^n</td><td>10^n</td><td>Prefix</td><td>Signifier</td>
-</tr><tr>
-<td>10</td><td>3</td><td>kilo</td><td>k</td>
-<td>-10</td><td>-3</td><td>milli</td><td>m</td>
-</tr><tr>
-<td>20</td><td>6</td><td>mega</td><td>M</td>
-<td>-20</td><td>-6</td><td>micro</td><td>μ</td>
-</tr><tr>
-<td>30</td><td>9</td><td>giga</td><td>G</td>
-<td>-30</td><td>-9</td><td>nano</td><td>n</td>
-</tr><tr>
-<td>40</td><td>12</td><td>tera</td><td>T</td>
-<td>-40</td><td>-12</td><td>pico</td><td>p</td>
-</tr><tr>
-<td>50</td><td>15</td><td>peta</td><td>P</td>
-<td>-50</td><td>-15</td><td>femto</td><td>f</td>
-</tr><tr>
-<td>50</td><td>18</td><td>exa</td><td>E</td>
-<td>-50</td><td>-18</td><td>atto</td><td>a</td>
-</tr><tr>
-<td>60</td><td>21</td><td>zetta</td><td>Z</td>
-<td>-60</td><td>-21</td><td>zepto</td><td>z</td>
-</tr><tr>
-<td>70</td><td>24</td><td>yotta</td><td>Y</td>
-<td>-70</td><td>-24</td><td>yocto</td><td>y</td>
+<th style="text-align: center;">2<sup>n</sup></th>
+<th style="text-align: center;">10<sup>n</sup></th>
+<th style="text-align: center;">Prefix</th>
+<th style="text-align: center;">Signifier</th>
+<th style="text-align: center;">2^n</th>
+<th style="text-align: center;">10^n</th>
+<th style="text-align: center;">Prefix</th>
+<th style="text-align: center;">Signifier</th>
 </tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">kilo</td>
+<td style="text-align: center;">k</td>
+<td style="text-align: center;">-10</td>
+<td style="text-align: center;">-3</td>
+<td style="text-align: center;">milli</td>
+<td style="text-align: center;">m</td>
+</tr>
+<tr>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">mega</td>
+<td style="text-align: center;">M</td>
+<td style="text-align: center;">-20</td>
+<td style="text-align: center;">-6</td>
+<td style="text-align: center;">micro</td>
+<td style="text-align: center;">μ</td>
+</tr>
+<tr>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">giga</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">-30</td>
+<td style="text-align: center;">-9</td>
+<td style="text-align: center;">nano</td>
+<td style="text-align: center;">n</td>
+</tr>
+<tr>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">tera</td>
+<td style="text-align: center;">T</td>
+<td style="text-align: center;">-40</td>
+<td style="text-align: center;">-12</td>
+<td style="text-align: center;">pico</td>
+<td style="text-align: center;">p</td>
+</tr>
+<tr>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">peta</td>
+<td style="text-align: center;">P</td>
+<td style="text-align: center;">-50</td>
+<td style="text-align: center;">-15</td>
+<td style="text-align: center;">femto</td>
+<td style="text-align: center;">f</td>
+</tr>
+<tr>
+<td style="text-align: center;">60</td>
+<td style="text-align: center;">18</td>
+<td style="text-align: center;">exa</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">-60</td>
+<td style="text-align: center;">-18</td>
+<td style="text-align: center;">atto</td>
+<td style="text-align: center;">a</td>
+</tr>
+<tr>
+<td style="text-align: center;">70</td>
+<td style="text-align: center;">21</td>
+<td style="text-align: center;">zetta</td>
+<td style="text-align: center;">Z</td>
+<td style="text-align: center;">-70</td>
+<td style="text-align: center;">-21</td>
+<td style="text-align: center;">zepto</td>
+<td style="text-align: center;">z</td>
+</tr>
+<tr>
+<td style="text-align: center;">80</td>
+<td style="text-align: center;">24</td>
+<td style="text-align: center;">yotta</td>
+<td style="text-align: center;">Y</td>
+<td style="text-align: center;">-80</td>
+<td style="text-align: center;">-24</td>
+<td style="text-align: center;">yocto</td>
+<td style="text-align: center;">y</td>
+</tr>
+</tbody>
 </table>
+</div>
 <doc-anchor-target id="computer-architecture-layers">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#computer-architecture-layers">#</doc-anchor-trigger>
@@ -339,38 +417,65 @@ This page is a work in progress. Feel free to help contribute by creating a <a h
         <span>Week 1 Question</span>
     </h1>
 </doc-anchor-target>
-<p><strong>Q4.</strong> Consider a multilevel computer in which all the levels are different. Each level has instructions that are m times as powerful as those of the level below it; that is, one level r instruction can do the work of m level r − 1 instructions. If a level-1 program requires k seconds to run, how long would equivalent programs take at levels 2, 3, and 4, assuming n level r instructions are required to interpret a single r + 1 instruction?</p>
+<doc-anchor-target id="q4">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#q4">#</doc-anchor-trigger>
+        <span>Q4.</span>
+    </h3>
+</doc-anchor-target>
+<blockquote>
+<p>Consider a multilevel computer in which all the levels are <strong>different</strong>. Each level has instructions that are <span class="math">m</span> times as powerful as those of the level below it; that is, <strong>one level <span class="math">r</span> instruction can do the work of <span class="math">m</span> level <span class="math">r − 1</span> instructions</strong>. If a level-1 program requires <span class="math">k</span> seconds to run, how long would equivalent programs take at levels 2, 3, and 4, assuming <span class="math">n</span> level <span class="math">r</span> instructions are required to interpret a single <span class="math">r + 1</span> instruction?</p>
+</blockquote>
 <p>The first step is to define all the variables in the question. From there, we can figure out how to solve it.</p>
-<p>Four variables: <em>r</em>, <em>m</em>, <em>t</em>, <em>k</em><br />
-    <em>r</em> = an arbitrary level in the computer<br />
-    k = the amount of seconds for a level-1 program to run<br />
-    <em>m</em> = the power factor of a level&#x27;s instructions<br />
-        1 level-<em>r</em> instruction can do the work of <em>m</em> level-(<em>r - 1</em>) instructions<br />
-    <em>n</em> = the amount of level-<em>r - 1</em> instructions required to interpret a level-<em>r</em> instruction<br />
-        1 level-<em>r</em> instruction gets converted into <em>n</em> level-(<em>r - 1</em>) instructions after translation/interpretation</p>
-<p>Now, let&#x27;s calculate how long a level-2 program takes.</p>
-<p>    A level-1 program takes <em>k</em> seconds to run.<br />
-        <em>k</em></p>
-<p>    A level-2 instruction first has to be converted into level-1 instructions before being executed.<br />
-    One level-2 instruction gets converted into <em>n</em> level-1 instructions.<br />
-        <em>n * k</em></p>
-<p>    The execution of these instructions then gets sped up by our power factor, <em>m</em>.<br />
-        <em>(n / m) * k</em></p>
-<p>    One level-2 program will take <em>(n / m) * k</em> seconds to run.</p>
+<p>Given four variables, <span class="math">r, m, n, k</span>:</p>
+<blockquote>
+<p><span class="math">r</span> = an arbitrary level in the computer<br />
+<span class="math">k</span> = the amount of seconds for a level-1 program to run<br />
+<span class="math">m</span> = the power factor of a level&#x27;s instructions<br />
+<span class="math">n</span> = the amount of level <span class="math">r - 1</span> instructions required to interpret a level-<em>r</em> instruction</p>
+<ul>
+<li>1 level-<span class="math">r</span> instruction can do the work of <span class="math">m</span> level-(<span class="math">r - 1</span>) instructions</li>
+<li>1 level-<span class="math">r</span> instruction gets converted into <span class="math">n</span> level-(<span class="math">r - 1</span>) instructions after translation/interpretation</li>
+</ul>
+</blockquote>
+<p><em>Now, let&#x27;s calculate how long a level-2 program takes.</em></p>
+<p>A level-1 program takes <span class="math">k</span> seconds to run.</p>
+<blockquote>
+<p><span class="math">k</span></p>
+</blockquote>
+<p>A level-2 instruction first has to be converted into level-1 instructions before being executed.</p>
+<p>One level-2 instruction gets converted into <span class="math">n</span> level-1 instructions.</p>
+<blockquote>
+<p><span class="math">n * k</span></p>
+</blockquote>
+<p>The execution of these instructions then gets sped up by our power factor, <span class="math">m</span>.</p>
+<blockquote>
+<p><span class="math">\frac{n}{m} * k</span></p>
+</blockquote>
+<p><strong>One level-2 program will take <span class="math">\frac{n}{m} * k</span> seconds to run.</strong></p>
 <p>We can use the same logic to calculate how long a level-3 program takes.</p>
-<p>    A level-2 program takes <em>(n / m) * k</em> seconds to run.<br />
-        <em>(n / m) * k</em></p>
-<p>    A level-3 instruction first has to be converted into <em>n</em> level-2 instructions before being executed.<br />
-        <em>(n / m) * n * k</em></p>
-<p>    The execution of these instructions then gets sped up by our power factor, <em>m</em>.<br />
-        <em>(n / m) * (n / m) * k</em><br />
-        <em>(n / m)<sup>2</sup> * k</em></p>
-<p>    One level-2 program will take <em>(n / m)<sup>2</sup> * k</em> seconds to run.</p>
-<p>Notice that, for a level-3 program, the degree of <em>(n / m)</em> is equal to 2.<br />
-For a level-2 program, the degree of <em>(n / m)</em> is equal to 1.<br />
-We can generalize this to say that for a level-<em>r</em> program, the degree of <em>(n / m)</em> is equal to <em>r - 1</em>.<br />
-        <em>(n / m)<sup>r - 1</sup> * k</em><br />
-This is how we get the formula!</p>
+<p>A level-2 program takes <span class="math">\frac{n}{m} * k</span> seconds to run.</p>
+<blockquote>
+<p><span class="math">\frac{n}{m} * k</span></p>
+</blockquote>
+<p>A level-3 instruction first has to be converted into <span class="math">n</span> level-2 instructions before being executed.</p>
+<blockquote>
+<p><span class="math">\frac{n}{m} * n * k</span></p>
+</blockquote>
+<p>The execution of these instructions then gets sped up by our power factor, <span class="math">m</span>.</p>
+<blockquote>
+<p><span class="math">\frac{n}{m} * \frac{n}{m} * k</span><br />
+<br>
+<span class="math">(\frac{n}{m})^2 * k</span></p>
+</blockquote>
+<p>One level-2 program will take <span class="math">(\frac{n}{m})^2 * k</span> seconds to run.</p>
+<p>Notice that, for a level-3 program, the degree of <span class="math">\frac{n}{m}</span> is equal to 2.<br />
+For a level-2 program, the degree of <span class="math">\frac{n}{m}</span> is equal to 1.<br />
+We can generalize this to say that for a level-<span class="math">r</span> program, the degree of <span class="math">\frac{n}{m}</span> is equal to <span class="math">r - 1</span>.</p>
+<blockquote>
+<p><span class="math">\frac{n}{m}^{r - 1} * k</span></p>
+</blockquote>
+<p>This is how we get the formula!</p>
 
                                 
                                 <!-- Required only on API pages -->
@@ -437,6 +542,6 @@ This is how we get the formula!</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Chapter 1: Introduction", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Chapter 1: Introduction", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
 </body>
 </html>
