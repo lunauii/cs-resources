@@ -16,19 +16,47 @@ order: 3
 [...what?](/cdi)
 ===
 
-!!!success
-This information is up to date for **Burnaby Campus** as of Winter 2025.
-!!!
-
 !!!
 More information is required for **Downtown Campus**. Please consider requesting a [pull request](https://github.com/lunauii/bcit-resources/pulls) to contribute!
 !!!
 
-!!!warning
-**WIP** <br>
-This page is a work in progress. Feel free to help contribute by creating a [pull request](https://github.com/lunauii/bcit-resources/pulls)!
-!!!
+## Instructor Specifics
+*Up to date as of Winter 2025.*
+
++++ Burnaby
+### Jason Wilder
+
+**Email:**              jason_wilder@bcit.ca\
+**Office Location:**    SW2-301\
+**Course Outline:**     https://www.bcit.ca/outlines/20251072574/
+
+**Office Hours:** By appointment (email jason_wilder@bcit.ca)
+
+#### Grading Matrix
+
+| Criterion                 | Weight
+| :---                      | :---:
+| Daily quizzes in the labs | 35%$^1$
+| Research presentations    | 15%
+| Midterm Exam              | 25%
+| Final Exam                | 25%
+
+$^1$*Quizzes can be retaken every other week up to a limit, with the most* ***recent*** *attempt determining the grade.*
++++ Downtown
+### Ayesha Anzer
+
+**Email:**              ayesha_anzer@bcit.ca\
+**Office Location:**    \
+**Course Outline:**     
+
+**Office Hours:**
+
+#### Grading Matrix
++++
+
 ## Course Description
 > Computer organization is a fundamental topic for computer science students and for any future programmers. The course gives a good understanding of the computer hardware and how software is built on a specific hardware. The computer is regarded as a hierarchy of levels, each one performing some well-defined functions from the device level (hardware) to the problem-oriented language level. Each level is discussed and analyzed in detail.
 
-Computer Organization/Architecture is an intensive course that covers hardware, circuitry, and low level languages such as Assembly. It is 
+Computer Organization/Architecture is an intensive introduction course that covers the foundations of hardware, networking, circuitry, and low level programming with Assembly. 
+
+Succeeding in this course requires you to memorize and understand diagrams, in addition to the underlying purpose of all the components covered.
