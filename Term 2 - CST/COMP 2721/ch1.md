@@ -39,16 +39,16 @@ This page is a work in progress. Feel free to help contribute by creating a [pul
 # Logarithms and Powers of 2
 > We probably won't see *too* much of anything above tera- or below pico-, but it's good knowledge to know anyway
 
- 2^n^   | 10^n^   | Prefix  | Signifier   | &nbsp;| 2^n     | 10^n    | Prefix  | Signifier 
- :---:  | :---:   | :---:   | :---:       |:---:  | :---:   | :---:   | :--:    | :---:       
- 10     |  3      | kilo    | k           |       | -10     | -3      | milli   | m  
- 20     |  6      | mega    | M           |       | -20     | -6      | micro   | μ  
- 30     |  9      | giga    | G           |       | -30     | -9      | nano    | n  
- 40     |  12     | tera    | T           |       | -40     | -12     | pico    | p  
- 50     |  15     | peta    | P           |       | -50     | -15     | femto   | f  
- 60     |  18     | exa     | E           |       | -60     | -18     | atto    | a  
- 70     |  21     | zetta   | Z           |       | -70     | -21     | zepto   | z  
- 80     |  24     | yotta   | Y           |       | -80     | -24     | yocto   | y   
+ 2^n^   | 10^n^   | Prefix  | Signifier   | &nbsp;| 2^n^   | 10^n^  | Prefix  | Signifier 
+ :---:  | :---:   | :---:   | :---:       |:---:  | :---:  | :---:  | :--:    | :---:       
+ 10     |  3      | kilo    | k           |       | -10    | -3     | milli   | m  
+ 20     |  6      | mega    | M           |       | -20    | -6     | micro   | μ  
+ 30     |  9      | giga    | G           |       | -30    | -9     | nano    | n  
+ 40     |  12     | tera    | T           |       | -40    | -12    | pico    | p  
+ 50     |  15     | peta    | P           |       | -50    | -15    | femto   | f  
+ 60     |  18     | exa     | E           |       | -60    | -18    | atto    | a  
+ 70     |  21     | zetta   | Z           |       | -70    | -21    | zepto   | z  
+ 80     |  24     | yotta   | Y           |       | -80    | -24    | yocto   | y   
   
 
 # Computer Architecture Layers
