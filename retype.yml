@@ -2,10 +2,10 @@ input: .
 output: .retype
 url: bcit.lunaui.cc # Add your website address here
 branding:
-  title: 'BCITCS: Redux'
+  title: 'BCITCS Resources'
   label: 2025.1
 links:
 - text: ':icon-mark-github: Github'
   link: https://github.com/lunauii/bcit-resources
 footer:
-  copyright: "lunaui powered, {{ year }}."
+  copyright: "lunaui powered, {{ year }}. Not afilliated with BCIT Faculty."

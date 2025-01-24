@@ -1,11 +1,11 @@
 ---
 author:
-    name: A. Santos (Lunaui)
-    avatar: "https://avatars.githubusercontent.com/u/65362444?s=48&v=4"
+    - name: A. Santos (Lunaui)
+      avatar: "https://avatars.githubusercontent.com/u/65362444?s=48&v=4"
 icon: rocket
 label: Introduction
 ---
-# BCITCS: Redux
+# BCITCS Resources
 !!!warning
 **WIP** <br>
 This page is a work in progress. Feel free to help contribute by creating a [pull request](https://github.com/lunauii/bcit-resources/pulls)!
