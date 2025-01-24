@@ -34,14 +34,14 @@ More information is required for **Downtown Campus**. Please consider requesting
 
 #### Grading Matrix
 
-| Criterion                 | Weight
-| :---                      | :---:
-| Daily quizzes in the labs | 35%$^1$
-| Research presentations    | 15%
-| Midterm Exam              | 25%
-| Final Exam                | 25%
+| Criterion                  | Weight
+| :---                       | :---:
+| Weekly quizzes in the labs | 35%$^1$
+| Research presentations     | 15%
+| Midterm Exam               | 25%
+| Final Exam                 | 25%
 
-$^1$*Quizzes can be retaken every other week up to a limit, with the most* ***recent*** *attempt determining the grade.*
+$^1$*Quizzes can be retaken every other week up to a limit, with the **most recent** attempt determining the grade.*
 +++ Downtown
 ### Ayesha Anzer
 
