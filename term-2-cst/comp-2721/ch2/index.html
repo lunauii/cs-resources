@@ -9,23 +9,23 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Placeholder</title>
-    <meta name="title" content="Placeholder">
+    <title>Chapter 2: Data Paths and Pipelining</title>
+    <meta name="title" content="Chapter 2: Data Paths and Pipelining">
     <meta name="description" content="WIP This page is a work in progress. Feel free to help contribute by creating a pull request!">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://bcit.lunaui.cc/term-1-cst/comp-1800/placeholder/">
+    <link rel="canonical" href="https://bcit.lunaui.cc/term-2-cst/comp-2721/ch2/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bcit.lunaui.cc/term-1-cst/comp-1800/placeholder/">
-    <meta property="og:title" content="Placeholder">
+    <meta property="og:url" content="https://bcit.lunaui.cc/term-2-cst/comp-2721/ch2/">
+    <meta property="og:title" content="Chapter 2: Data Paths and Pipelining">
     <meta property="og:description" content="WIP This page is a work in progress. Feel free to help contribute by creating a pull request!">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://bcit.lunaui.cc/term-1-cst/comp-1800/placeholder/">
-    <meta property="twitter:title" content="Placeholder">
+    <meta property="twitter:url" content="https://bcit.lunaui.cc/term-2-cst/comp-2721/ch2/">
+    <meta property="twitter:title" content="Chapter 2: Data Paths and Pipelining">
     <meta property="twitter:description" content="WIP This page is a work in progress. Feel free to help contribute by creating a pull request!">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
@@ -35,6 +35,8 @@
     <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791151222299" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791151222299" data-turbo-eval="false" defer></script>
+    <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -163,12 +165,6 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="placeholder" class="break-words">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#placeholder">#</doc-anchor-trigger>
-        <span>Placeholder</span>
-    </h1>
-</doc-anchor-target>
 <div class="flex mb-6">
     <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
     <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
@@ -181,12 +177,240 @@
             </svg>
         </div>
         <div class="pr-5 ml-3 w-full">
-<p><strong>WIP</strong> <br>
+<p><strong>WIP</strong><br/>
 This page is a work in progress. Feel free to help contribute by creating a <a href="https://github.com/lunauii/bcit-resources/pulls">pull request</a>!</p>
         </div>
     </div>
 </div>
-<p>Reprehenderit amet duis culpa ut. Occaecat irure ea sint id adipisicing reprehenderit et est enim sunt. Anim ullamco ex aliqua aute esse magna. Esse ipsum irure minim culpa enim ex occaecat voluptate Lorem tempor deserunt veniam ea eu. Voluptate commodo adipisicing nisi consectetur cupidatat est. Anim commodo consequat veniam laboris irure adipisicing cillum ullamco reprehenderit irure dolor nulla.</p>
+<doc-anchor-target id="chapter-2-data-paths-and-pipelining" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chapter-2-data-paths-and-pipelining">#</doc-anchor-trigger>
+        <span>Chapter 2: Data Paths and Pipelining</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="terminology">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#terminology">#</doc-anchor-trigger>
+        <span>Terminology</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Clock</strong> - Something that can be turned on and off</p>
+<p><strong>Clock Cycle</strong> - The interval between the rising edges of the clock</p>
+<p><strong>Frequency</strong> - the amount of clock cycles per second, measured in Hertz</p>
+<p><strong>Period</strong> - the time taken per clock cycle</p>
+<p><strong>MIPS</strong> - <strong>M</strong>illions of <strong>I</strong>nstructions <strong>P</strong>er <strong>S</strong>econd</p>
+<ul>
+<li>Represents how fast a processor can begin instructions</li>
+<li>(Officially, the MIPS processor stands for Microprocessor without Interlocked Pipeline Stages)</li>
+</ul>
+<p><strong>Program Counter</strong> - Special register in the CPU that stores the address of the next instruction to be fetched</p>
+<p><strong>Instruction Register</strong> - special register in the CPU that stores an instruction to be decoded and executed</p>
+<p><strong>ALU</strong> - Arithmetic Logic Unit</p>
+<p><strong>Principle of Spatial Locality</strong> - Words with numerically similar addresses (ex: 6000, 6001) tend to be stored physically close to each other</p>
+<p><strong>Principle of Temporal Locality</strong> - Words requested by the CPU are likely to be requested again in the near future</p>
+<p><strong>RISC</strong> - Reduced Instruction Set Computer<br />
+<strong>CISC</strong> - Complex Instruction Set Computer</p>
+<p><strong>Pipelining</strong> - The process of splitting the FDE process into separate stages, allowing for multiple instructions to be worked on at once</p>
+<p><strong>Parallelism</strong> - Being able to work on several instructions in the same stage at the same time</p>
+<p><strong>Latency</strong> - the total time it takes for a single instruction to finish</p>
+<p><strong>Bandwidth</strong> - the rate at which instructions are finished</p>
+<ul>
+<li>UNRELATED TO LATENCY!</li>
+</ul>
+<doc-anchor-target id="clock-speed-and-frequency">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#clock-speed-and-frequency">#</doc-anchor-trigger>
+        <span>Clock Speed and Frequency</span>
+    </h1>
+</doc-anchor-target>
+<p>A <strong>clock</strong> is anything that can be turned on and off.</p>
+<ul>
+<li>In computers, this is usually an electronic component that turns &quot;on&quot; when receiving</li>
+<li>The &quot;on/off&quot; cycle tends to be a regular cycle in computers, called the <strong>clock cycle</strong>.</li>
+<li>The clock cycle&#x27;s usually quite fast in computers - 100 million cycles per second</li>
+</ul>
+<p>A <strong>clock cycle</strong> is the interval between the rising edges of the clock (on, off, on again).</p>
+<ul>
+<li>One clock cycle is rising edge to rising edge</li>
+</ul>
+<p>The <strong>frequency</strong> of a clock (or the <strong>clock speed</strong>) is how many clock cycles happen per second</p>
+<ul>
+<li>Measured in Hertz (Ex: 100MHz)</li>
+</ul>
+<p>The <strong>period</strong> of a clock is how much time passes between clock cycles</p>
+<ul>
+<li>Measured in time units</li>
+<li>Inverse of frequency\</li>
+</ul>
+<p>Ex:</p>
+<blockquote>
+<p><span class="math">Frequency = 100MHz</span><br />
+<span class="math">Period = 1/100M = 0.00000001</span> s <span class="math">= 10</span> nanoseconds</p>
+</blockquote>
+<p>A 1 GHz CPU has 1 billion rising/falling edges per second
+1 rising edge per 1/1 billion seconds = 1 nanosecond</p>
+<p>Clocks are involved in almost every component of a computer. Every clock cycle, that component can execute one action (ex: transfer data from RAM to CPU, decode instruction).<br />
+The CPU can start an instruction each clock cycle.</p>
+<p>Analogy: Imagine a bus. People at a bus stop can only board that bus every time a bus arrives at that stop.</p>
+<p><figure class="content-center">
+    <img src="../diagrams/d2_clock_cycles.png" alt="A diagram of a clock.">
+    <figcaption class="caption">A diagram of a clock.</figcaption>
+</figure>
+</p>
+<p>This doesn’t mean we can finish an instruction each clock cycle - usually, finishing an instruction takes much longer than a single clock cycle.</p>
+<ul>
+<li><strong>Parallelism</strong> ties in with this later!</li>
+</ul>
+<p>But that&#x27;s not the main concern when we want to make an efficient CPU. What doesn’t matter today is how long an instruction takes (the <strong>latency</strong>), or how often you can start them (the <strong>clock speed</strong>). What matters is the speed at which an instruction is finished (the <strong>bandwidth</strong>).</p>
+<doc-anchor-target id="the-von-neumann-datapath">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-von-neumann-datapath">#</doc-anchor-trigger>
+        <span>The Von Neumann Datapath</span>
+    </h1>
+</doc-anchor-target>
+<p><figure class="content-center">
+    <img src="../diagrams/03_von_neumann_datapath.png" alt="The Von Neumann data path. Taken from Andrew S. Tanenbaum - Structured Computer Organization.">
+    <figcaption class="caption">The Von Neumann data path. Taken from Andrew S. Tanenbaum - Structured Computer Organization.</figcaption>
+</figure>
+</p>
+<ul>
+<li>The lines are <strong>buses</strong> (electrical lines)</li>
+<li>The boxes are <strong>registers</strong> (CPU memory - can store one word)</li>
+<li>The big box has a lot of registers</li>
+<li>Some registers have names and specific functions</li>
+</ul>
+<p>A computer has only a few dozen registers. You don’t need that many for a good CPU, though; the registers just need to be constantly running.</p>
+<doc-anchor-target id="special-registers">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#special-registers">#</doc-anchor-trigger>
+        <span>Special Registers</span>
+    </h2>
+</doc-anchor-target>
+<p>There are two special registers in the CPU;</p>
+<ul>
+<li>the <strong>program counter</strong> (PC), which stores the main memory address of the next instruction to be fetched, and</li>
+<li>the <strong>instruction register</strong> (IR), which stores an instruction to be decoded and executed.</li>
+</ul>
+<doc-anchor-target id="the-datapath-process">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-datapath-process">#</doc-anchor-trigger>
+        <span>The Datapath Process</span>
+    </h2>
+</doc-anchor-target>
+<p>There are five steps to the Von Neumann data path:</p>
+<ol>
+<li>The CPU <strong>fetches</strong> the address (outside of the CPU) from the Program Counter, and gets it transferred from memory using buses
+Program Counter is updated with the next instruction’s address</li>
+<li>The CPU <strong>decodes</strong> the instruction</li>
+<li>The CPU grabs operands from the its registers and then transfers them to the input registers of the ALU</li>
+<li>The ALU <strong>executes</strong> the instruction by taking in the input registers&#x27; values, modifying them accordingly, and sendind the output to the output register</li>
+<li>The final value either gets sent into a register for use in the near future, or sent into RAM to be stored for later use
+<ul>
+<li>Eventually, everything goes back to the hard drive</li>
+</ul>
+</li>
+</ol>
+<p><figure class="content-center">
+    <img src="../diagrams/04_fde_cycle.png" alt="The fetch-decode-execute cycle.">
+    <figcaption class="caption">The fetch-decode-execute cycle.</figcaption>
+</figure>
+</p>
+<p>You should note that the slowest part of the FDE cycle is the fetching part, or getting instructions and data from memory. To speed that process up, you just need to prefetch those instructions.</p>
+<p>Programs run fast when:</p>
+<ul>
+<li>They’re constantly being provided data (so their registers are full)</li>
+<li>They can predict what that data is (so that they don&#x27;t always have to keep going to main memory)
+<ul>
+<li><strong>Cache</strong> is related to this!</li>
+</ul>
+</li>
+</ul>
+<p>You may also notice that each step is executed by a separate unit. This ties into <strong>pipelining</strong> later, but hold on for a second.</p>
+<doc-anchor-target id="the-instruction-execution-wishlist">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#the-instruction-execution-wishlist">#</doc-anchor-trigger>
+        <span>The Instruction Execution &quot;Wishlist&quot;</span>
+    </h2>
+</doc-anchor-target>
+<p>There are many parts of the FDE cycle computer architects wish they could optimize. There are also reasons why they can&#x27;t.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;">Wish</th>
+<th style="text-align: center;">Flaws</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">All instructions are directly executed by hardware, as hardware runs significantly faster than software (remember the multilevel computer diagram?)</td>
+<td style="text-align: center;">Complex and expensive, plus some instructions are too complicated and should be executed by hardware (ex: connecting to MySQL)</td>
+</tr>
+<tr>
+<td style="text-align: center;">Instructions are issued as fast/often as possible</td>
+<td style="text-align: center;">Complex and expensive, plus has physical limits on the hardware (wires can only get so close to each other before they start affecting each other)</td>
+</tr>
+<tr>
+<td style="text-align: center;">Instructions are easy to decode, preferably by making them all the same size</td>
+<td style="text-align: center;">Long instructions can&#x27;t be compressed into the same data size as short instructions, plus this idea goes against backwards compatibility (ex: decoding instructions from the 80&#x27;s)</td>
+</tr>
+<tr>
+<td style="text-align: center;">Only LOAD and STORE instructions reference main memory</td>
+<td style="text-align: center;">Referencing main memory is inevitable (ex: adding two values from main memory)</td>
+</tr>
+<tr>
+<td style="text-align: center;">The CPU&#x27;s immediate memory stash is expanded by adding more registers</td>
+<td style="text-align: center;">Expensive, power consumptive, and impractical (stored instructions might become outdated by the time they&#x27;re referenced)</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="cache">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cache">#</doc-anchor-trigger>
+        <span>Cache</span>
+    </h1>
+</doc-anchor-target>
+<p>Jason uses a stomach-fridge-store analogy for cache. I&#x27;m going to steal it.</p>
+<p>Imagine the CPU&#x27;s registers are its stomach. Also imagine that the main memory of the computer is a Costco. The Costco is pretty far from the CPU&#x27;s house, and so it wants to minimize the time it takes to get groceries from there to its stomach. Luckily for it, there&#x27;s a third party it isn&#x27;t aware of called the <strong>cache</strong>!</p>
+<p>Whenever the CPU sends an instruction to fetch a word from main memory, the cache intercepts that instruction and sees if it already has the data the CPU wants. If it does, then it sends that word to the CPU instead of taking the long trip to main memory Costco. If not, then it goes to main memory itself, fetches a whole block of instructions near the word the CPU wants, then stores it in a fridge for the CPU. Then, it sends back the word the CPU requested.</p>
+<p>The reason the cache stores a block of words is that it takes advantage of two principles of locality; the <strong>principle of spatial locality</strong> and the <strong>principle of temporal locality.</strong></p>
+<doc-anchor-target id="principle-of-spatial-locality">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#principle-of-spatial-locality">#</doc-anchor-trigger>
+        <span>Principle of Spatial Locality</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="principle-of-temporal-locality">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#principle-of-temporal-locality">#</doc-anchor-trigger>
+        <span>Principle of Temporal Locality</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="interpreters">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#interpreters">#</doc-anchor-trigger>
+        <span>Interpreters</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="pipelining">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#pipelining">#</doc-anchor-trigger>
+        <span>Pipelining</span>
+    </h1>
+</doc-anchor-target>
+<doc-anchor-target id="latency">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#latency">#</doc-anchor-trigger>
+        <span>Latency</span>
+    </h2>
+</doc-anchor-target>
+<doc-anchor-target id="bandwidth">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bandwidth">#</doc-anchor-trigger>
+        <span>Bandwidth</span>
+    </h2>
+</doc-anchor-target>
 
                                 
                                 <!-- Required only on API pages -->
@@ -196,20 +420,20 @@ This page is a work in progress. Feel free to help contribute by creating a <a h
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../term-1-cst/comp-1537/placeholder/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../term-2-cst/comp-2721/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Placeholder</span>
+                                                <span class="block mt-1">COMP 2721</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../term-1-cst/comp-1712/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../term-2-cst/comp-2721/ch1/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">COMP 1712</span>
+                                                <span class="block mt-1">Chapter 1: Introduction</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -253,6 +477,6 @@ This page is a work in progress. Feel free to help contribute by creating a <a h
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Placeholder", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Chapter 1: Introduction", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
 </body>
 </html>
