@@ -1,11 +1,11 @@
 input: .
 output: .retype
-url: bcit.lunaui.cc # Add your website address here
+url: cs.lunaui.cc # Add your website address here
 branding:
-  title: 'BCITCS Resources'
+  title: 'CS Resources'
   label: 2025.1
 links:
 - text: ':icon-mark-github: Github'
-  link: https://github.com/lunauii/bcit-resources
+  link: https://github.com/lunauii/cs-resources
 footer:
   copyright: "lunaui powered, {{ year }}. Not afilliated with BCIT Faculty."
