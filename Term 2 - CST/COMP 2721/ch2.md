@@ -132,6 +132,14 @@ There are many parts of the FDE cycle computer architects wish they could optimi
  Only LOAD and STORE instructions reference main memory | Referencing main memory is inevitable (ex: adding two values from main memory)
  The CPU's immediate memory stash is expanded by adding more registers | Expensive, power consumptive, and impractical (stored instructions might become outdated by the time they're referenced)
 
+ ## RISC vs. CISC Architectures
+ **Reduced instruction set computers** (RISC) involve fewer and simpler instructions. (ex: 3 + 3 + 3 + 3 + 3) \
+ **Complex instruction set computers** (CISC) involve more and more complicated instructions. (ex: 3 x 5)
+
+ The idea behind CISC architectures is that by implementing all common instructions directly in hardware (regardless of complexity), the CPU doesn't have to interpret as many instructions.
+
+ Computers today are mostly RISC, with a bit of CISC.
+
 # Cache
 
 Jason uses a stomach-fridge-store analogy for cache. I'm going to steal it.
@@ -140,11 +148,19 @@ Imagine the CPU's registers are its stomach. Also imagine that the main memory o
 
 Whenever the CPU sends an instruction to fetch a word from main memory, the cache intercepts that instruction and sees if it already has the data the CPU wants. If it does, then it sends that word to the CPU instead of taking the long trip to main memory Costco. If not, then it goes to main memory itself, fetches a whole block of instructions near the word the CPU wants, then stores it in a fridge for the CPU. Then, it sends back the word the CPU requested.
 
-The reason the cache stores a block of words is that it takes advantage of two principles of locality; the **principle of spatial locality** and the **principle of temporal locality.**
+The cache exists to try to reduce the amount of times the CPU has to get a word all the way from main memory. The less times it has to go to Costco, the faster the program runs. Storing blocks of words at a time takes advantage of two principles of locality: the **principle of spatial locality** and the **principle of temporal locality.**
 
 ## Principle of Spatial Locality
 
+The **principle of spatial locality** states that memory addresses that are numerically close to each other are also physically located close to each other.
+
+Jason uses a metaphor for this, regarding Tiger Woods. If you're talking about Tiger Woods, you're probably also going to talk about things like golf, holes in one, the Official World Golf Rankting, etc. Memory addresses work in a similar way; if the CPU requests the word in address 6000, it's also likely to request word 6001 soon.
+
 ## Principle of Temporal Locality
+
+The principle of spatial locality states that words requested now are likely to be requested soon.
+
+Continuing the Tiger Woods metaphor, if you mention Tiger Woods, you're likely to mention him again. Storing a requested word in a cache means the CPU doesn't have to fetch it from main memory again if it rerequests it.
 
 # Interpreters
 
