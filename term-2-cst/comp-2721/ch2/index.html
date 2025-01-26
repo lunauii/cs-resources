@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791151222299">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791167747843">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.791151222299" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.791167747843" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791151222299" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791167747843" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791151222299" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791167747843" data-turbo-eval="false" defer></script>
     <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
@@ -365,6 +365,16 @@ Program Counter is updated with the next instruction’s address</li>
 </tbody>
 </table>
 </div>
+<doc-anchor-target id="risc-vs-cisc-architectures">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#risc-vs-cisc-architectures">#</doc-anchor-trigger>
+        <span>RISC vs. CISC Architectures</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Reduced instruction set computers</strong> (RISC) involve fewer and simpler instructions. (ex: 3 + 3 + 3 + 3 + 3) <br />
+<strong>Complex instruction set computers</strong> (CISC) involve more and more complicated instructions. (ex: 3 x 5)</p>
+<p>The idea behind CISC architectures is that by implementing all common instructions directly in hardware (regardless of complexity), the CPU doesn&#x27;t have to interpret as many instructions.</p>
+<p>Computers today are mostly RISC, with a bit of CISC.</p>
 <doc-anchor-target id="cache">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#cache">#</doc-anchor-trigger>
@@ -374,19 +384,23 @@ Program Counter is updated with the next instruction’s address</li>
 <p>Jason uses a stomach-fridge-store analogy for cache. I&#x27;m going to steal it.</p>
 <p>Imagine the CPU&#x27;s registers are its stomach. Also imagine that the main memory of the computer is a Costco. The Costco is pretty far from the CPU&#x27;s house, and so it wants to minimize the time it takes to get groceries from there to its stomach. Luckily for it, there&#x27;s a third party it isn&#x27;t aware of called the <strong>cache</strong>!</p>
 <p>Whenever the CPU sends an instruction to fetch a word from main memory, the cache intercepts that instruction and sees if it already has the data the CPU wants. If it does, then it sends that word to the CPU instead of taking the long trip to main memory Costco. If not, then it goes to main memory itself, fetches a whole block of instructions near the word the CPU wants, then stores it in a fridge for the CPU. Then, it sends back the word the CPU requested.</p>
-<p>The reason the cache stores a block of words is that it takes advantage of two principles of locality; the <strong>principle of spatial locality</strong> and the <strong>principle of temporal locality.</strong></p>
+<p>The cache exists to try to reduce the amount of times the CPU has to get a word all the way from main memory. The less times it has to go to Costco, the faster the program runs. Storing blocks of words at a time takes advantage of two principles of locality: the <strong>principle of spatial locality</strong> and the <strong>principle of temporal locality.</strong></p>
 <doc-anchor-target id="principle-of-spatial-locality">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#principle-of-spatial-locality">#</doc-anchor-trigger>
         <span>Principle of Spatial Locality</span>
     </h2>
 </doc-anchor-target>
+<p>The <strong>principle of spatial locality</strong> states that memory addresses that are numerically close to each other are also physically located close to each other.</p>
+<p>Jason uses a metaphor for this, regarding Tiger Woods. If you&#x27;re talking about Tiger Woods, you&#x27;re probably also going to talk about things like golf, holes in one, the Official World Golf Rankting, etc. Memory addresses work in a similar way; if the CPU requests the word in address 6000, it&#x27;s also likely to request word 6001 soon.</p>
 <doc-anchor-target id="principle-of-temporal-locality">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#principle-of-temporal-locality">#</doc-anchor-trigger>
         <span>Principle of Temporal Locality</span>
     </h2>
 </doc-anchor-target>
+<p>The principle of spatial locality states that words requested now are likely to be requested soon.</p>
+<p>Continuing the Tiger Woods metaphor, if you mention Tiger Woods, you&#x27;re likely to mention him again. Storing a requested word in a cache means the CPU doesn&#x27;t have to fetch it from main memory again if it rerequests it.</p>
 <doc-anchor-target id="interpreters">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#interpreters">#</doc-anchor-trigger>
