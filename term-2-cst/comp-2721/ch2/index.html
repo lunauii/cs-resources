@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791322977134">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791323756846">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,12 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.791322977134" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.791323756846" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791322977134" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791323756846" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791322977134" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791323756846" data-turbo-eval="false" defer></script>
+    <script id="mermaid-js" data-cfasync="false" src="../../../resources/js/mermaid.js?v=3.6.0" defer></script>
     <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
@@ -442,6 +443,12 @@ is cheaper than having hardware do the conversion (interpretation).</p>
 </doc-anchor-target>
 <p>Instructional Latency: The <strong>total time from start to finish</strong> for one instruction to be fetched, decoded, and executed. (i.e. to pass through the entire pipeline).</p>
 <p>For example, if you have a pipeline for car manufacturing that takes <strong>1 minute</strong> to get the car chassis, <strong>1 minute</strong> to put the engine and other moving parts, <strong>2 minutes</strong> to put all the doors on, <strong>60 minutes</strong> to paint, <strong>1 minute</strong> to put on wheels, and <strong>1 minute</strong> to clean, the latency of the pipeline would be the sum of all these processes, <strong>66 minutes</strong>/car.</p>
+<div class="overflow-hidden mb-6 py-4 dark:px-5 dark:bg-white rounded-md"><pre class="mermaid w-full">graph LR
+    A[1 minute] --&gt; B[1 minute]
+    B --&gt; C[2 minutes]
+    C --&gt; D[60 minutes]
+    D --&gt; E[1 minute]
+    E --&gt; F[1 minute]</pre></div>
 <p>Another example is a pipeline that has 4 stages to execute an instruction. The first stage takes 20 nanoseconds to complete, the second 15ns, third 40ns, and the last one taking 5ns. The overall latency of this pipeline would be <strong>80ns/instruction</strong>.</p>
 <doc-anchor-target id="bandwidth">
     <h2>
@@ -525,6 +532,6 @@ is cheaper than having hardware do the conversion (interpretation).</p>
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Chapter 2: Data Paths and Pipelining", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Chapter 2: Data Paths and Pipelining", level: 3, icon: "file", hasPrism: false, hasMermaid: true, hasMath: true, tocDepth: 23 }</script>
 </body>
 </html>
