@@ -39,6 +39,8 @@ This page is a work in progress. Feel free to help contribute by creating a [pul
 **RISC** - Reduced Instruction Set Computer\
 **CISC** - Complex Instruction Set Computer
 
+**Interpreter** - A software program that FDE's the instructions of a program, a language level down
+
 **Pipelining** - The process of splitting the FDE process into separate stages, allowing for multiple instructions to be worked on at once
 
 **Parallelism** - Being able to work on several instructions in the same stage at the same time
