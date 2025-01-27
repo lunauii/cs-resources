@@ -165,10 +165,35 @@ The principle of spatial locality states that words requested now are likely to 
 
 Continuing the Tiger Woods metaphor, if you mention Tiger Woods, you're likely to mention him again. Storing a requested word in a cache means the CPU doesn't have to fetch it from main memory again if it rerequests it.
 
-# Interpreters
+## Definition: Interpreter
+
+Any software program (aka a virtual machine) that FDE (fetches, decodes, and executes) the instructions
+of another program. The output of this is another program that is simpler to run. But, this process takes
+time. This is cheaper than having hardware run the original (more complex, higher-level) program and it
+is cheaper than having hardware do the conversion (interpretation).
 
 # Pipelining
 
+Jason's analogies: 
+
+> Imagine a computer. It's pipeline is a set of multiple hardware devices that fetches, decodes, and executes instructions in parallel and in series in order to maximize instructional bandwidth. Now imagine a car assembly line. It's pipeline is a set of multiple hardware devices (or people) that builds cars in parallel and in series, in order to maximise car-creation bandwidth. Assembly lines can build cars in a way that is simpler, cheaper, and faster.
+
 ## Latency
 
+Instructional Latency: The **total time from start to finish** for one instruction to be fetched, decoded, and executed. (i.e. to pass through the entire pipeline). 
+
+For example, if you have a pipeline for car manufacturing that takes **1 minute** to get the car chassis, **1 minute** to put the engine and other moving parts, **2 minutes** to put all the doors on, **60 minutes** to paint, **1 minute** to put on wheels, and **1 minute** to clean, the latency of the pipeline would be the sum of all these processes, **66 minutes**/car.
+
+Another example is a pipeline that has 4 stages to execute an instruction. The first stage takes 20 nanoseconds to complete, the second 15ns, third 40ns, and the last one taking 5ns. The overall latency of this pipeline would be **80ns/instruction**.
+
 ## Bandwidth
+
+Instructional Bandwidth: The number of instructions fetched, decoded, and executed per unit time (how much time it takes to finish the longest process per instruction). 
+
+Using the car example, the cars would get bottlenecked at the painting stage, resulting of a bandwith of **1 car/60 minutes**.
+
+Using the nanosecond example, the bandwidth would be 1 instruction/40ns, or **1/(the time it takes to finish the slowest stage)**.
+
+## Definition: Superscalar Architecture
+
+Adding extra hardware at the slowest stages in parallel in order to eliminate bottlenecks.
