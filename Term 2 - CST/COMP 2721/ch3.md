@@ -115,23 +115,23 @@ The first step to transform this into Hamming code is to insert spots for parity
 
 Next, examine the groups for each parity bit and set the parity for each group to be EVEN.
 > Examining bit 1: `__1_ 010_ 1100`\
-> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; `↑-↑- ↑-↑- ↑-↑-`\
-> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; `--1- 0-0- 1-0-`\
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; `↑-↑- ↑-↑- ↑-↑-`\
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; `--1- 0-0- 1-0-`\
 > Parity is already even --> bit 1 is 0
 >
 > Inserting at bit 2: `0_1_ 010_ 1100`\
-> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; `-↑↑- -↑↑- -↑↑-`\
-> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; `--1- -10- -10-`\
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; `-↑↑- -↑↑- -↑↑-`\
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; `--1- -10- -10-`\
 > Parity is odd --> bit 2 becomes 1 to make it even
 >
 > Inserting at bit 4: `011_ 010_ 1100`\
-> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; `---↑ ↑↑↑- ---↑`\
-> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; `---- 010- ---0`\
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; `---↑ ↑↑↑- ---↑`\
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; `---- 010- ---0`\
 > Parity is odd --> bit 4 becomes 1 to make it even
 >
 > Inserting at bit 8: `0111 010_ 1100`\
-> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; `---- ---↑ ↑↑↑↑`\
-> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&nbsp; `---- ---- 1100`\
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; `---- ---↑ ↑↑↑↑`\
+> &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; `---- ---- 1100`\
 > Parity is even --> bit 8 is 0
 
 And there you have your codeword!
