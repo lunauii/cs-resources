@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791318431532">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791319426982">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Chapter 3: Basic Error-Correcting Code Theory</title>
-    <meta name="title" content="Chapter 3: Basic Error-Correcting Code Theory">
+    <title>Chapter 3: Error-Correcting Code</title>
+    <meta name="title" content="Chapter 3: Error-Correcting Code">
+    <meta name="description" content="Data word- the raw data word we want to protect and store, error-free">
 
     <!-- Canonical -->
     <link rel="canonical" href="https://cs.lunaui.cc/term-2-cst/comp-2721/ch3/">
@@ -18,20 +19,24 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://cs.lunaui.cc/term-2-cst/comp-2721/ch3/">
-    <meta property="og:title" content="Chapter 3: Basic Error-Correcting Code Theory">
+    <meta property="og:title" content="Chapter 3: Error-Correcting Code">
+    <meta property="og:description" content="Data word- the raw data word we want to protect and store, error-free">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://cs.lunaui.cc/term-2-cst/comp-2721/ch3/">
-    <meta property="twitter:title" content="Chapter 3: Basic Error-Correcting Code Theory">
+    <meta property="twitter:title" content="Chapter 3: Error-Correcting Code">
+    <meta property="twitter:description" content="Data word- the raw data word we want to protect and store, error-free">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.791318431532" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.791319426982" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791318431532" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791319426982" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791318431532" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791319426982" data-turbo-eval="false" defer></script>
+    <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -160,12 +165,216 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="chapter-3-basic-error-correcting-code-theory" class="break-words">
+<doc-anchor-target id="chapter-3-error-correcting-code" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#chapter-3-basic-error-correcting-code-theory">#</doc-anchor-trigger>
-        <span>Chapter 3: Basic Error-Correcting Code Theory</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chapter-3-error-correcting-code">#</doc-anchor-trigger>
+        <span>Chapter 3: Error-Correcting Code</span>
     </h1>
 </doc-anchor-target>
+<doc-anchor-target id="terminology">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#terminology">#</doc-anchor-trigger>
+        <span>Terminology</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Data word</strong> - the raw data word we want to protect and store, error-free</p>
+<p><strong>Codeword</strong> - the data word with extra bits added for integrity</p>
+<p><strong>Code</strong> - a set of valid words (ex: a dictionary)</p>
+<p><strong>Parity</strong> - whether a number is odd or even (or 1 or 0)</p>
+<p><strong>Hamming Distance</strong> - the minimum amount of different bits between any two codewords of a code</p>
+<doc-anchor-target id="error-correcting-codes">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#error-correcting-codes">#</doc-anchor-trigger>
+        <span>Error-Correcting Codes</span>
+    </h1>
+</doc-anchor-target>
+<p>Error-correcting code consists of:</p>
+<ul>
+<li>Detecting errors in code (easy)</li>
+<li>Correcting errors in code (hard)</li>
+</ul>
+<p>Okay, well, detecting a few errors is easy. But sometimes, errors are undetectable because there’s so many errors it ends up at a different, but valid, message.</p>
+<ul>
+<li>For example, say you try to text someone “wanna go to the club”, but you type “wanna go to the pub” instead.</li>
+<li>There’s been an error, a typo, but it’s undetectable, because “pub” is a valid word, despite it being a typo of “club”.</li>
+</ul>
+<p>This is an unsolvable problem; you cannot correct all errors. Instead, the goal’s to make it very unlikely for a message with errors to be interpreted as valid. The more differences between valid messages, the better.</p>
+<ul>
+<li>We differentiate valid messages by adding <strong>redundant bits</strong> to the data word. Adding lots of redundancy is ideal, but also becomes more inefficient the more bits you add.</li>
+</ul>
+<p>Error correction is a trade-off between <strong>clarity</strong> and <strong>efficiency</strong>. To get clearer data words, we need longer codewords with lots of differences between them. More dissimilar valid words make it easier to correct errors.</p>
+<doc-anchor-target id="worst-case-scenarios">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#worst-case-scenarios">#</doc-anchor-trigger>
+        <span>Worst-Case Scenarios</span>
+    </h2>
+</doc-anchor-target>
+<p>Error correction goes by probabilities. We look for the nearest valid data word for a given code word, and assume that that’s the data word the code word was transferring. If there hasn’t been that many errors while transferring the code, this works pretty well!</p>
+<p>However, there are <strong>three unlikely, worst-case scenarios</strong> in code transferring:</p>
+<ul>
+<li>A received code is halfway between two valid solutions (detectable, but impossible to fix)</li>
+<li>A received code has been messed up enough to seem like less errors occurred than how much actually happened (detectable, but will be fixed incorrectly)</li>
+<li>A received code has completely messed up and stumbled into becoming another valid solution (undetectable, won’t be fixed at all)</li>
+</ul>
+<doc-anchor-target id="example-code-a">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-code-a">#</doc-anchor-trigger>
+        <span>Example: Code A</span>
+    </h3>
+</doc-anchor-target>
+<p>Imagine a code word comprised of 8 bits, two possible values for each bit, and only two valid values:</p>
+<ul>
+<li>0000 0000</li>
+<li>1111 1111</li>
+</ul>
+<p>In this case, the worst scenarios would be:</p>
+<ul>
+<li>0000 0000 → 0000 1111
+<ul>
+<li>There’s definitely an error, but the code won’t know how to decipher it. Is it 0000 0000? Or is it 1111 1111? There’s no way to tell.</li>
+</ul>
+</li>
+<li>0000 0000 → 0011 1111
+<ul>
+<li>There’s definitely an error, but the code interprets less errors than there actually are. This codeword gets wrongly corrected to 1111 1111, instead of 0000 0000.</li>
+</ul>
+</li>
+<li>0000 0000 → 1111 1111
+<ul>
+<li>The code doesn’t see an error with this, even though there is. The codeword got corrupted so much, it wrapped back around into seeming like a different, but valid, codeword.</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="example-code-b">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#example-code-b">#</doc-anchor-trigger>
+        <span>Example: Code B</span>
+    </h3>
+</doc-anchor-target>
+<p>Now, imagine a code comprised of 8 bits, two possible values for each bit, and only two INvalid values:</p>
+<ul>
+<li>0000 0000</li>
+<li>1111 1111</li>
+</ul>
+<p>Every other combination of bits is valid in this code.</p>
+<p>This code is very bad because it’s nearly impossible to figure out if there’s an error. It has zero correctability. If you looked at any valid codeword, say, 0101 1101, you wouldn’t be able to tell if an error occurred or not. The sender might have wanted to send 0001 1101 instead, but the recipient wouldn’t know!</p>
+<p>Code A <strong>wasn’t space efficient</strong>, but offered <strong>clarity</strong>.
+Code B was <strong>very space efficient</strong>, but <strong>did not offer</strong> clarity.</p>
+<doc-anchor-target id="hamming-distance">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hamming-distance">#</doc-anchor-trigger>
+        <span>Hamming Distance</span>
+    </h3>
+</doc-anchor-target>
+<p>The Hamming Distance of a code is the minimum distance between any 2 valid words in that code.<br />
+In Code A, the Hamming Distance is 8 bits, as there are 8 bits of difference between the two codewords.</p>
+<p>Ex: Look at this 6-bit code with three valid words.</p>
+<ul>
+<li>000 000</li>
+<li>000 011</li>
+<li>111 111
+The distance between the latter two code words is 2 bits. Therefore, this code has a Hamming Distance of 2.</li>
+</ul>
+<p>A code with Hamming Distance of h bits can:</p>
+<ul>
+<li>Detect all errors consisting of up to <span class="math">h - 1</span> bits
+<ul>
+<li>At <span class="math">h</span>-bit errors, the codeword may seem valid (see: worst-case scenario #3)</li>
+</ul>
+</li>
+<li>Correct all errors consisting of up to <span class="math">h/2 - 1</span> bits
+<ul>
+<li>At <span class="math">h/2</span> bits, it may be unclear as to which valid solution the codeword was supposed to be (see: worst-case scenario #2)</li>
+</ul>
+</li>
+</ul>
+<p>Big Hamming Distance = large gap between valid codewords = good.</p>
+<doc-anchor-target id="hamming-code">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hamming-code">#</doc-anchor-trigger>
+        <span>Hamming Code</span>
+    </h1>
+</doc-anchor-target>
+<p>Hamming code takes in a data word, and inserts <strong>parity bits</strong> on every power of two to transform it into a codeword.</p>
+<ul>
+<li>Parity bits set the parity of their respective group of bits, by setting themselves to 0 or 1.</li>
+<li>Generally, when you create Hamming code, you want the parity of each parity bit to be even.</li>
+<li>If you want odd parity, just flip the parity bits.</li>
+</ul>
+<doc-anchor-target id="parity-bit-groups">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#parity-bit-groups">#</doc-anchor-trigger>
+        <span>Parity Bit &quot;Groups&quot;</span>
+    </h2>
+</doc-anchor-target>
+<p>Parity bits each check the parity of a certain &quot;group&quot; of bits in a codeword.</p>
+<p>The parity at bit 1 checks the following bits in a given codeword sequence:</p>
+<ul>
+<li>1 0 1 0 1 0 1 0 1 0 1 0 1 0 1 0 …</li>
+</ul>
+<p>The parity at bit 2 checks:</p>
+<ul>
+<li>0 1 1 0 0 1 1 0 0 1 1 0 0 1 1 0 …</li>
+</ul>
+<p>The parity at bit 4 checks:</p>
+<ul>
+<li>0 0 0 1 1 1 1 0 0 0 0 1 1 1 1 0 …</li>
+</ul>
+<p>The parity at bit 8 checks:</p>
+<ul>
+<li>0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 0 …</li>
+</ul>
+<p>Say we have a data word of 0110 1100, and we want to encode it with Hamming code, with an EVEN parity.</p>
+<blockquote>
+<p><code v-pre>1010 1100</code></p>
+</blockquote>
+<p>The first step to transform this into Hamming code is to insert spots for parity bits on bits 1, 2, 4, 8, etc. Every power of two.</p>
+<blockquote>
+<p>Inserting at bit 1: <code v-pre>_101 0110 0</code><br />
+Inserting at bit 2: <code v-pre>__10 1011 00</code><br />
+Inserting at bit 4: <code v-pre>__1_ 0101 100</code><br />
+Inserting at bit 8: <code v-pre>__1_ 010_ 1100</code></p>
+</blockquote>
+<p>Next, examine the groups for each parity bit and set the parity for each group to be EVEN.</p>
+<blockquote>
+<p>Examining bit 1: <code v-pre>__1_ 010_ 1100</code><br />
+        <code v-pre>↑-↑- ↑-↑- ↑-↑-</code><br />
+        <code v-pre>--1- 0-0- 1-0-</code><br />
+Parity is already even --&gt; bit 1 is 0</p>
+<p>Inserting at bit 2: <code v-pre>0_1_ 010_ 1100</code><br />
+         <code v-pre>-↑↑- -↑↑- -↑↑-</code><br />
+         <code v-pre>--1- -10- -10-</code><br />
+Parity is odd --&gt; bit 2 becomes 1 to make it even</p>
+<p>Inserting at bit 4: <code v-pre>011_ 010_ 1100</code><br />
+         <code v-pre>---↑ ↑↑↑- ---↑</code><br />
+         <code v-pre>---- 010- ---0</code><br />
+Parity is odd --&gt; bit 4 becomes 1 to make it even</p>
+<p>Inserting at bit 8: <code v-pre>0111 010_ 1100</code><br />
+         <code v-pre>---- ---↑ ↑↑↑↑</code><br />
+         <code v-pre>---- ---- 1100</code><br />
+Parity is even --&gt; bit 8 is 0</p>
+</blockquote>
+<p>And there you have your codeword!</p>
+<blockquote>
+<p>Final codeword: <code v-pre>0111 0100 1100</code></p>
+</blockquote>
+<p>If the parity of a parity bit doesn’t align with the parity of its group, that means either:</p>
+<ul>
+<li>There’s an error with several parity bits</li>
+<li>There’s an error in that parity bit’s group</li>
+</ul>
+<p>The most likely statement is that there’s an error in that parity bit’s group. It’s not impossible that the parity bits are wrong, but it’s less likely.</p>
+<blockquote>
+<p>TO DO: Make an example of this<br />
+I don&#x27;t feel like it rn though</p>
+</blockquote>
+<p>Hamming code detects errors by having the parity of each data word bit covered by at least two parity bits. That way, errors can be narrowed down based on which parity bits don’t match their groups.</p>
+<p>Hamming code is not that good of a code. It can only detect and correct a <strong>single bit error</strong>. Hamming code can’t correct multi-bit errors, and sometimes, it can’t even detect them either.</p>
+<p>To recover the original data word from Hamming code:</p>
+<ul>
+<li>Remove all the parity bits</li>
+<li>Flip the intersection of all groups whose parity bits aren’t correct</li>
+</ul>
 
                                 
                                 <!-- Required only on API pages -->
@@ -232,6 +441,6 @@
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Chapter 3: Basic Error-Correcting Code Theory", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Chapter 3: Basic Error-Correcting Code Theory", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
 </body>
 </html>
