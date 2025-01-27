@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791319426982">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791319842871">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.791319426982" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.791319842871" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791319426982" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791319842871" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791319426982" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791319842871" data-turbo-eval="false" defer></script>
     <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
@@ -338,20 +338,20 @@ Inserting at bit 8: <code v-pre>__1_ 010_ 1100</code></p>
 <p>Next, examine the groups for each parity bit and set the parity for each group to be EVEN.</p>
 <blockquote>
 <p>Examining bit 1: <code v-pre>__1_ 010_ 1100</code><br />
-        <code v-pre>↑-↑- ↑-↑- ↑-↑-</code><br />
-        <code v-pre>--1- 0-0- 1-0-</code><br />
+         <code v-pre>↑-↑- ↑-↑- ↑-↑-</code><br />
+         <code v-pre>--1- 0-0- 1-0-</code><br />
 Parity is already even --&gt; bit 1 is 0</p>
 <p>Inserting at bit 2: <code v-pre>0_1_ 010_ 1100</code><br />
-         <code v-pre>-↑↑- -↑↑- -↑↑-</code><br />
-         <code v-pre>--1- -10- -10-</code><br />
+         <code v-pre>-↑↑- -↑↑- -↑↑-</code><br />
+         <code v-pre>--1- -10- -10-</code><br />
 Parity is odd --&gt; bit 2 becomes 1 to make it even</p>
 <p>Inserting at bit 4: <code v-pre>011_ 010_ 1100</code><br />
-         <code v-pre>---↑ ↑↑↑- ---↑</code><br />
-         <code v-pre>---- 010- ---0</code><br />
+         <code v-pre>---↑ ↑↑↑- ---↑</code><br />
+         <code v-pre>---- 010- ---0</code><br />
 Parity is odd --&gt; bit 4 becomes 1 to make it even</p>
 <p>Inserting at bit 8: <code v-pre>0111 010_ 1100</code><br />
-         <code v-pre>---- ---↑ ↑↑↑↑</code><br />
-         <code v-pre>---- ---- 1100</code><br />
+         <code v-pre>---- ---↑ ↑↑↑↑</code><br />
+         <code v-pre>---- ---- 1100</code><br />
 Parity is even --&gt; bit 8 is 0</p>
 </blockquote>
 <p>And there you have your codeword!</p>
