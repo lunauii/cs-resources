@@ -1,6 +1,9 @@
 ---
-label: "Chapter 1: Introduction"
-icon: rocket
+author:
+    - name: mordinario
+      avatar: "https://avatars.githubusercontent.com/u/180433833?s=64&v=4"
+label: "Chapter 2: Data Paths and Pipelining"
+icon: git-pull-request-draft
 ---
 !!!warning
 **WIP**<br/>
