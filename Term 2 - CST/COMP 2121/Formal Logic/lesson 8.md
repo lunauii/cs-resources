@@ -1,5 +1,5 @@
 ---
-label: 'Lesson 8: Logical Implication'
+label: 'Lesson 8'
 icon: 
 ---
 !!!danger
