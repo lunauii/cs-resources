@@ -186,6 +186,15 @@ Instructional Latency: The **total time from start to finish** for one instructi
 
 For example, if you have a pipeline for car manufacturing that takes **1 minute** to get the car chassis, **1 minute** to put the engine and other moving parts, **2 minutes** to put all the doors on, **60 minutes** to paint, **1 minute** to put on wheels, and **1 minute** to clean, the latency of the pipeline would be the sum of all these processes, **66 minutes**/car.
 
+  ```mermaid
+  graph LR
+      A[1 minute] --> B[1 minute]
+      B --> C[2 minutes]
+      C --> D[60 minutes]
+      D --> E[1 minute]
+      E --> F[1 minute]
+  ```
+
 Another example is a pipeline that has 4 stages to execute an instruction. The first stage takes 20 nanoseconds to complete, the second 15ns, third 40ns, and the last one taking 5ns. The overall latency of this pipeline would be **80ns/instruction**.
 
 ## Bandwidth
