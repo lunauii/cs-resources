@@ -1,6 +1,6 @@
 ---
-label: "Chapter 1: Introduction"
-icon: rocket
+label: "Chapter 2: Data Paths and Pipelining"
+icon: git-pull-request-draft
 ---
 !!!warning
 **WIP**<br/>
