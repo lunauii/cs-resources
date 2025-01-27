@@ -1,7 +1,6 @@
 ---
-label: 'Gallery'
-order: -1
-icon: image
+label: 'Lesson 9: Intro to Set Theory'
+icon: 
 ---
 !!!warning
 **WIP**<br/>

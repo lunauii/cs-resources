@@ -1,7 +1,6 @@
 ---
-label: 'Gallery'
-order: -1
-icon: image
+label: 'Lesson 10: Relationship'
+icon: 
 ---
 !!!warning
 **WIP**<br/>

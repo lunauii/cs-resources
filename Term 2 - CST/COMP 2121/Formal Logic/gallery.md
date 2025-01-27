@@ -1,7 +1,7 @@
 ---
 label: 'Gallery'
 order: -1
-icon: 
+icon: image
 ---
 !!!warning
 **WIP**<br/>

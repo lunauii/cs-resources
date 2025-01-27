@@ -1,7 +1,6 @@
 ---
-label: 'Gallery'
-order: -1
-icon: image
+label: 'Lesson 7: Logic of Quantified Statements'
+icon: 
 ---
 !!!warning
 **WIP**<br/>
