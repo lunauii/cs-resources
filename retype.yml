@@ -4,6 +4,10 @@ url: cs.lunaui.cc # Add your website address here
 branding:
   title: 'CS Resources'
   label: 2025.1
+  colors:
+    label:
+      text: '#ffe000'
+      background: '#f2e4b340'
 links:
 - text: ':icon-mark-github: Github'
   link: https://github.com/lunauii/cs-resources
