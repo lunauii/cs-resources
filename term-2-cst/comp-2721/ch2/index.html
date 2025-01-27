@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791319842871">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791322977134">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.791319842871" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.791322977134" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791319842871" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791322977134" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791319842871" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791322977134" data-turbo-eval="false" defer></script>
     <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
@@ -414,30 +414,51 @@ Program Counter is updated with the next instruction’s address</li>
 </doc-anchor-target>
 <p>The principle of spatial locality states that words requested now are likely to be requested soon.</p>
 <p>Continuing the Tiger Woods metaphor, if you mention Tiger Woods, you&#x27;re likely to mention him again. Storing a requested word in a cache means the CPU doesn&#x27;t have to fetch it from main memory again if it rerequests it.</p>
-<doc-anchor-target id="interpreters">
-    <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#interpreters">#</doc-anchor-trigger>
-        <span>Interpreters</span>
-    </h1>
+<doc-anchor-target id="definition-interpreter">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#definition-interpreter">#</doc-anchor-trigger>
+        <span>Definition: Interpreter</span>
+    </h2>
 </doc-anchor-target>
+<p>Any software program (aka a virtual machine) that FDE (fetches, decodes, and executes) the instructions
+of another program. The output of this is another program that is simpler to run. But, this process takes
+time. This is cheaper than having hardware run the original (more complex, higher-level) program and it
+is cheaper than having hardware do the conversion (interpretation).</p>
 <doc-anchor-target id="pipelining">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pipelining">#</doc-anchor-trigger>
         <span>Pipelining</span>
     </h1>
 </doc-anchor-target>
+<p>Jason&#x27;s analogies:</p>
+<blockquote>
+<p>Imagine a computer. It&#x27;s pipeline is a set of multiple hardware devices that fetches, decodes, and executes instructions in parallel and in series in order to maximize instructional bandwidth. Now imagine a car assembly line. It&#x27;s pipeline is a set of multiple hardware devices (or people) that builds cars in parallel and in series, in order to maximise car-creation bandwidth. Assembly lines can build cars in a way that is simpler, cheaper, and faster.</p>
+</blockquote>
 <doc-anchor-target id="latency">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#latency">#</doc-anchor-trigger>
         <span>Latency</span>
     </h2>
 </doc-anchor-target>
+<p>Instructional Latency: The <strong>total time from start to finish</strong> for one instruction to be fetched, decoded, and executed. (i.e. to pass through the entire pipeline).</p>
+<p>For example, if you have a pipeline for car manufacturing that takes <strong>1 minute</strong> to get the car chassis, <strong>1 minute</strong> to put the engine and other moving parts, <strong>2 minutes</strong> to put all the doors on, <strong>60 minutes</strong> to paint, <strong>1 minute</strong> to put on wheels, and <strong>1 minute</strong> to clean, the latency of the pipeline would be the sum of all these processes, <strong>66 minutes</strong>/car.</p>
+<p>Another example is a pipeline that has 4 stages to execute an instruction. The first stage takes 20 nanoseconds to complete, the second 15ns, third 40ns, and the last one taking 5ns. The overall latency of this pipeline would be <strong>80ns/instruction</strong>.</p>
 <doc-anchor-target id="bandwidth">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#bandwidth">#</doc-anchor-trigger>
         <span>Bandwidth</span>
     </h2>
 </doc-anchor-target>
+<p>Instructional Bandwidth: The number of instructions fetched, decoded, and executed per unit time (how much time it takes to finish the longest process per instruction).</p>
+<p>Using the car example, the cars would get bottlenecked at the painting stage, resulting of a bandwith of <strong>1 car/60 minutes</strong>.</p>
+<p>Using the nanosecond example, the bandwidth would be 1 instruction/40ns, or <strong>1/(the time it takes to finish the slowest stage)</strong>.</p>
+<doc-anchor-target id="definition-superscalar-architecture">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#definition-superscalar-architecture">#</doc-anchor-trigger>
+        <span>Definition: Superscalar Architecture</span>
+    </h2>
+</doc-anchor-target>
+<p>Adding extra hardware at the slowest stages in parallel in order to eliminate bottlenecks.</p>
 
                                 
                                 <!-- Required only on API pages -->
