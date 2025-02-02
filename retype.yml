@@ -2,7 +2,8 @@ input: .
 output: .retype
 url: cs.lunaui.cc # Add your website address here
 branding:
-  title: 'CS Resources'
+  logo: ./android-chrome-512x512.png
+  title: CS Resources
   label: 2025.1
   colors:
     label:
