@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791862393467">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.791929572789">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -30,11 +30,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.791862393467" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.791929572789" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791862393467" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791929572789" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791862393467" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791929572789" data-turbo-eval="false" defer></script>
     <script id="mermaid-js" data-cfasync="false" src="../../../resources/js/mermaid.js?v=3.6.0" defer></script>
     <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
@@ -419,16 +419,13 @@ Program Counter is updated with the next instruction’s address</li>
 </doc-anchor-target>
 <p>The principle of spatial locality states that words requested now are likely to be requested soon.</p>
 <p>Continuing the Tiger Woods metaphor, if you mention Tiger Woods, you&#x27;re likely to mention him again. Storing a requested word in a cache means the CPU doesn&#x27;t have to fetch it from main memory again if it rerequests it.</p>
-<doc-anchor-target id="definition-interpreter">
+<doc-anchor-target id="interpreters">
     <h2>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#definition-interpreter">#</doc-anchor-trigger>
-        <span>Definition: Interpreter</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#interpreters">#</doc-anchor-trigger>
+        <span>Interpreters</span>
     </h2>
 </doc-anchor-target>
-<p>Any software program (aka a virtual machine) that FDE (fetches, decodes, and executes) the instructions
-of another program. The output of this is another program that is simpler to run. But, this process takes
-time. This is cheaper than having hardware run the original (more complex, higher-level) program and it
-is cheaper than having hardware do the conversion (interpretation).</p>
+<p>An interpreter is any software program (aka a virtual machine) that FDEs the instructions of another program. The output of this is another program that is simpler to run. Interpreters are cheaper than having hardware run the original (more complex, higher-level) program, and cheaper than having hardware do the conversion (interpretation). However, the interpretation process itself usually slows down programs.</p>
 <doc-anchor-target id="pipelining">
     <h1>
         <doc-anchor-trigger class="header-anchor-trigger" to="#pipelining">#</doc-anchor-trigger>

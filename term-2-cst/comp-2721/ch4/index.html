@@ -9,24 +9,24 @@
     <meta name="generator" content="Retype 3.6.0">
 
     <!-- Primary Meta Tags -->
-    <title>Placeholder</title>
-    <meta name="title" content="Placeholder">
-    <meta name="description" content="WIP This page is a work in progress. Feel free to help contribute by creating a pull request!">
+    <title>Chapter 4: Mean Memory Access Time and Hard Drive Disks</title>
+    <meta name="title" content="Chapter 4: Mean Memory Access Time and Hard Drive Disks">
+    <meta name="description" content="Mean Memory Access Time (MMAT)- the average time it takes for a fetch request to complete, controlled by the hit/miss rate of the cache">
 
     <!-- Canonical -->
-    <link rel="canonical" href="https://cs.lunaui.cc/term-1-cst/comp-1510/placeholder/">
+    <link rel="canonical" href="https://cs.lunaui.cc/term-2-cst/comp-2721/ch4/">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cs.lunaui.cc/term-1-cst/comp-1510/placeholder/">
-    <meta property="og:title" content="Placeholder">
-    <meta property="og:description" content="WIP This page is a work in progress. Feel free to help contribute by creating a pull request!">
+    <meta property="og:url" content="https://cs.lunaui.cc/term-2-cst/comp-2721/ch4/">
+    <meta property="og:title" content="Chapter 4: Mean Memory Access Time and Hard Drive Disks">
+    <meta property="og:description" content="Mean Memory Access Time (MMAT)- the average time it takes for a fetch request to complete, controlled by the hit/miss rate of the cache">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://cs.lunaui.cc/term-1-cst/comp-1510/placeholder/">
-    <meta property="twitter:title" content="Placeholder">
-    <meta property="twitter:description" content="WIP This page is a work in progress. Feel free to help contribute by creating a pull request!">
+    <meta property="twitter:url" content="https://cs.lunaui.cc/term-2-cst/comp-2721/ch4/">
+    <meta property="twitter:title" content="Chapter 4: Mean Memory Access Time and Hard Drive Disks">
+    <meta property="twitter:description" content="Mean Memory Access Time (MMAT)- the average time it takes for a fetch request to complete, controlled by the hit/miss rate of the cache">
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
@@ -35,6 +35,8 @@
     <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.791929572789" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
     <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.791929572789" data-turbo-eval="false" defer></script>
+    <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -167,30 +169,298 @@
                                 <!-- Rendered if sidebar right is enabled -->
                                 <div id="docs-sidebar-right-toggle"></div>
                                 <!-- Page content  -->
-<doc-anchor-target id="placeholder" class="break-words">
+<doc-anchor-target id="chapter-4-mean-memory-access-time-and-hard-drive-disks" class="break-words">
     <h1>
-        <doc-anchor-trigger class="header-anchor-trigger" to="#placeholder">#</doc-anchor-trigger>
-        <span>Placeholder</span>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#chapter-4-mean-memory-access-time-and-hard-drive-disks">#</doc-anchor-trigger>
+        <span>Chapter 4: Mean Memory Access Time and Hard Drive Disks</span>
     </h1>
 </doc-anchor-target>
-<div class="flex mb-6">
-    <div class="shrink-0 w-1 rounded-tl rounded-bl bg-yellow-500"></div>
-    <div class="flex w-full py-4 border border-l-0 border-gray-300 rounded-tr rounded-br doc-alert bg-white dark:bg-dark-700 dark:border-dark-700" role="alert">
-        <div class="flex items-center ml-4 h-7">
-            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-yellow-500" width="22" height="22" viewBox="0 0 24 24" role="presentation">
-                <g fill="currentColor"><g>
-                    <path d="M22.48 15.59L14.01 1.45A2.968 2.968 0 0012.16.09c-.78-.19-1.58-.07-2.27.35-.41.25-.76.6-1.01 1.01v.01L.4 15.6c-.83 1.43-.33 3.27 1.1 4.1.45.26.95.4 1.48.4h16.95c.8-.01 1.55-.33 2.11-.9.56-.57.87-1.33.86-2.13a3.04 3.04 0 00-.42-1.48zm-1.87 2.21c-.19.19-.44.3-.69.3H2.99c-.17 0-.34-.05-.49-.13a.992.992 0 01-.37-1.35L10.6 2.48c.08-.14.2-.25.34-.33a.992.992 0 011.37.33l8.46 14.13c.09.15.13.32.13.49 0 .26-.1.51-.29.7z"></path>
-                    <path d="M11.45 12.1c.55 0 1-.45 1-1v-4c0-.55-.45-1-1-1s-1 .45-1 1v4c0 .56.45 1 1 1zM11.46 14.1c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
-                </g></g>
-            </svg>
-        </div>
-        <div class="pr-5 ml-3 w-full">
-<p><strong>WIP</strong> <br>
-This page is a work in progress. Feel free to help contribute by creating a <a href="https://github.com/lunauii/bcit-resources/pulls">pull request</a>!</p>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <img class="object-cover" src="https://avatars.githubusercontent.com/u/180433833?s=64&amp;v=4">
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">mordinario</div>
         </div>
     </div>
 </div>
-<p>Reprehenderit amet duis culpa ut. Occaecat irure ea sint id adipisicing reprehenderit et est enim sunt. Anim ullamco ex aliqua aute esse magna. Esse ipsum irure minim culpa enim ex occaecat voluptate Lorem tempor deserunt veniam ea eu. Voluptate commodo adipisicing nisi consectetur cupidatat est. Anim commodo consequat veniam laboris irure adipisicing cillum ullamco reprehenderit irure dolor nulla.</p>
+
+<doc-anchor-target id="terminology">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#terminology">#</doc-anchor-trigger>
+        <span>Terminology</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Mean Memory Access Time (MMAT)</strong> - the average time it takes for a fetch request to complete, controlled by the hit/miss rate of the cache</p>
+<p><strong>Hit</strong> - when a cache has the CPU&#x27;s requested word<br />
+<strong>Miss</strong> - when a cache doesn&#x27;t have the CPU&#x27;s requested word<br />
+<strong>Hit Rate</strong> - The percentage of hits from a cache, over total requests
+<strong>Miss Rate</strong> - The percentage of misses from a cache, over total requests</p>
+<ul>
+<li>Hit rates and miss rates are</li>
+</ul>
+<p><strong>Hard Disk Drive (HDD)</strong> - a drive consisting of platters that store data</p>
+<p><strong>Platter</strong> - a magnetic disk that stores tracks of data in a hard drive</p>
+<p><strong>Track</strong> - a circular ring of bits on a platter</p>
+<ul>
+<li>Tracks are concentric within a platter</li>
+</ul>
+<p><strong>Sector</strong> - a fixed-length section (slice) of a track</p>
+<ul>
+<li><strong>Header</strong> (formal name is <strong>preamble</strong>) - a portion of redundant data before the payload in a sector, used to synchronize the read/write head</li>
+<li><strong>Footer</strong> (no formal name, usually just called ECC) - a portion of redundant data after the payload in a sector, used to hold error-correcting code</li>
+</ul>
+<p><strong>Intersector gap</strong> - a gap between adjacent sectors</p>
+<p><strong>Disk head (aka read-write head)</strong> - A component that uses induction to either read or write bits from a platter</p>
+<p><strong>Cylinder</strong> - A stack of the same tracks on different platters</p>
+<p><strong>Seek</strong> - a movement of the read/write head to the correct radial position for the track it wants to read/write to</p>
+<ul>
+<li><strong>Seek time</strong> - the time it takes for the read/write heads to move to the desired track</li>
+</ul>
+<p><strong>Rotational latency</strong> - the time it takes for the desired sector to rotate to the read/write head</p>
+<ul>
+<li><strong>Rotation time</strong> - revolutions of a platter per unit of time</li>
+</ul>
+<doc-anchor-target id="mean-memory-access-time">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mean-memory-access-time">#</doc-anchor-trigger>
+        <span>Mean Memory Access Time</span>
+    </h1>
+</doc-anchor-target>
+<p>Mean memory access time is the average time it takes to access a given word (mean as in average).</p>
+<p>Every fetch request is intercepted by the cache, whose goal is to save time by already storing the requested word.</p>
+<p>Ideally, the cache has a very high hit rate (percentage of total time saves over total requests). However, the cache has to update every now and then - spatial locality doesn’t last forever.</p>
+<p>For example, if you&#x27;re running a completely new program, and the CPU requests a completely new word, the cache isn&#x27;t going to have that in its memory. It always has to miss at least <em>once</em>.</p>
+<ul>
+<li>Good quiz question - you can’t have a 100% hit rate!</li>
+</ul>
+<p>To calculate mean memory access time, you&#x27;re going to need three things:</p>
+<ul>
+<li>The time it takes to access the cache(s)</li>
+<li>The time it takes to access main memory</li>
+<li>The hit rate of the cache(s) (or, the miss rate)</li>
+</ul>
+<p>If you have multiple layers of cache, you&#x27;ll need to know the time to access all of those levels, as well as all their hit rates.</p>
+<doc-anchor-target id="mmat-formulas">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#mmat-formulas">#</doc-anchor-trigger>
+        <span>MMAT Formulas</span>
+    </h2>
+</doc-anchor-target>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">MMAT = (cache access time) + (miss rate)(main memory access)
+
+	 = (L1 cache access time)
+     + (L1 cache miss rate)(L2 cache access time) 
+	 + (L2 cache miss rate)(L3 cache access time)
+	 + (L3 cache miss rate)(main memory access time)</code></pre>
+</doc-codeblock></div>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">MMAT = total time / amount of fetch requests
+
+     = [(L1 cache access amount)(L1 cache access time)
+     +  (L2 cache access amount)(L2 cache access time)
+     +  (...)\
+     +  (main memory access amount)(main memory access time)]
+     / (amount of fetch requests)</code></pre>
+</doc-codeblock></div>
+<p>The cache intercepts every fetch request by the CPU, and therefore needs to be accounted for for each fetch request.</p>
+<ul>
+<li>If you have multiple layers of cache, this only applies to the first layer.</li>
+</ul>
+<p>Say we had:</p>
+<ul>
+<li>2 levels of caches</li>
+<li>a L1 cache access time of 1 µs</li>
+<li>a L2 cache access time of 4 µs</li>
+<li>a main memory access time of 60 µs</li>
+<li>16 hits and 48 misses from the L1 cache</li>
+<li>16 hits and 32 misses from the L2 cache</li>
+</ul>
+<p>Using the first formula:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">MMAT = (cache access time) + (miss rate)(main memory access)
+
+	 = (L1 cache access time)
+     + (L1 cache miss rate)(L2 cache access time) 
+	 + (L2 cache miss rate)(main memory access time)
+
+     = 1 µs
+     + (48/(16 + 48))(4 µs) -&gt; (48/64)(4 µs) -&gt; (3/4)(4 µs)
+     + (32/(16 + 32))(60 µs) -&gt; (32/48)(60 µs) -&gt; (2/3)(60 µs)
+
+     = 1 µs + (3/4)(4 µs) + (2/3)(60 µs)</code></pre>
+</doc-codeblock></div>
+<doc-anchor-target id="hard-disk-drives">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#hard-disk-drives">#</doc-anchor-trigger>
+        <span>Hard-Disk Drives</span>
+    </h1>
+</doc-anchor-target>
+<p>A hard disk drive is a storage component on your computer that stores data on aluminum <strong>platters</strong> that constantly spin.</p>
+<ul>
+<li>Platters spin really fast (usually 7200 RPM for low-end laptops, 120 RPS, 8.3 ms/revolution)</li>
+</ul>
+<p>Drives can read and write data from these platters using a <strong>read-write head</strong> by either:</p>
+<ul>
+<li>having a current induced from that platter&#x27;s magnetic charge (reading)</li>
+<li>sending an electric charge through that head and inducing a charge onto the platter (writing)</li>
+</ul>
+<p>(Side note: it is a very bad idea to even just open hard drives up! They may not work again!)</p>
+<p>Hard disk drives usually have multiple platters on them, and each platter has its own read-write head. Every read-write head is physically joined together. Each platter&#x27;s also usually double-sided, and spins synchronously with the other platters.</p>
+<p><figure class="content-center">
+    <img src="../diagrams/06_disk_with_platters.png" alt="A hard disk drive with two double-sided platters.">
+    <figcaption class="caption">A hard disk drive with two double-sided platters.</figcaption>
+</figure>
+</p>
+<p>Platters don’t actually store data themselves, instead they’re split into <strong>tracks</strong> - thin, concentric rings on a platter that store data.</p>
+<ul>
+<li>Tracks are labeled track 0, track 1, track 2, track 3… from outside ring to inside ring</li>
+</ul>
+<p>Each platter has thousands of tracks that vertically align on each platter (track 0 of one platter is directly above/below track 0 of every other platter). Each track is also evenly split into multiple <strong>sectors</strong> - “slices” of tracks that serve to split tracks into specific sections.</p>
+<ul>
+<li>Sectors are labeled sector 0, sector 1, sector 2, sector 3… in the direction that the platter spins</li>
+<li>Sector 0 of track 0, sector 0 of track 1, sector 0 of track 2, … are all part of the same “slice” of a track</li>
+<li>Data doesn’t have to be stored consecutively, though! (Quiz question)</li>
+</ul>
+<p><figure class="content-center">
+    <img src="../diagrams/08_disk_structure.png" alt="A diagram of a platter. Taken from Wikipedia.">
+    <figcaption class="caption">A diagram of a platter. Taken from Wikipedia.</figcaption>
+</figure>
+<figure class="content-center">
+    <img src="../diagrams/09_disk_structure_legend.png" alt="The legend for the platter. Taken from Wikipedia.">
+    <figcaption class="caption">The legend for the platter. Taken from Wikipedia.</figcaption>
+</figure>
+</p>
+<p>(The geometrical sectors are the &quot;slices&quot; we&#x27;ve been talking about.)</p>
+<p>Sectors contain:</p>
+<ul>
+<li><strong>Headers</strong> (officially called <strong>preamble</strong>, used to synchronize the read/write head before reading)</li>
+<li><strong>Footers</strong> (no formal name, but contains error-correcting code to make sure data is stored correctly)</li>
+<li>The actual data of that sectors - usually 512 bytes&#x27; worth</li>
+<li><strong>Intersector</strong> gaps between adjacent sectors</li>
+</ul>
+<p>(You&#x27;ll notice there’s a lot of redundant data in sectors for formatting. Companies count that data as storable in the drive in the packaging. This is why you always have less storage than you bought.)</p>
+<p><figure class="content-center">
+    <img src="../diagrams/07_sector_reading.png" alt="A diagram of the read-write head reading two sectors.">
+    <figcaption class="caption">A diagram of the read-write head reading two sectors.</figcaption>
+</figure>
+</p>
+<p>Sectors are read from preamble to ECC.</p>
+<doc-anchor-target id="seeking-and-reading">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#seeking-and-reading">#</doc-anchor-trigger>
+        <span>Seeking and Reading</span>
+    </h2>
+</doc-anchor-target>
+<p>When the HDD wants to read from a sector, it has to <strong>seek</strong> that data. A seek is the movement of the read-write head to the specific track ring it wants to read from.</p>
+<ul>
+<li>The seek time is the time it takes for the read/write heads to move to the desired track.</li>
+</ul>
+<p>During any given seek, the read-write head could be hovering over any specific track ring:</p>
+<ul>
+<li>The best case scenario is that it’s exactly where it wants to be (in which case, there&#x27;s no seek delay).</li>
+<li>The worst case scenario is that it’s on, say, track 0, when it wants to search track 9,999.
+Since it&#x27;s essentially random where the head is, the average seek time is (the worst case scenario delay) / 2.</li>
+</ul>
+<p>After it reaches that track, it then has to wait for the platter to rotate to the sector it wants to read from. The <strong>rotational latency</strong> is the time it takes for the desired sector to rotate to the read-write head.</p>
+<ul>
+<li>The average rotational latency is half of a rotation, since it’s spinning so fast it’s essentially random how long the heads wait.</li>
+</ul>
+<p>Side note, you&#x27;ll notice how seeks and rotation are both physical movements. This is bad, as not only is it slow compared to digital drives, but many things can go wrong physically.</p>
+<doc-anchor-target id="cylinders">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#cylinders">#</doc-anchor-trigger>
+        <span>Cylinders</span>
+    </h2>
+</doc-anchor-target>
+<p><strong>Cylinders</strong> are stacks of aligned tracks. Say there&#x27;s 10,000 tracks on four platters total. This means that there would be 10,000 cylinders, each with four tracks.</p>
+<p>Data we want is stored on a sector, on a track, on a platter.</p>
+<ul>
+<li>Each address on a HDD is three-dimensional!</li>
+</ul>
+<doc-anchor-target id="lecture-question">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#lecture-question">#</doc-anchor-trigger>
+        <span>Lecture Question</span>
+    </h1>
+</doc-anchor-target>
+<p>\20. How long does it take to read a disk with 10,000 cylinders, each containing four tracks of 2048 sectors? First, all the sectors of track 0 are to be read starting at sector 0, then all the sectors of track 1 starting at sector 0, and so on. The rotation time is 10 msec, and a seek takes 1 msec between adjacent cylinders and 20 msec for the worst case. Switching between tracks of a cylinder can be done instantaneously.</p>
+<p>Information we have:</p>
+<ul>
+<li>10,000 cylinders</li>
+<li>Each cylinder has four tracks, meaning the disk has four platters</li>
+<li>Each track has 2048 sectors</li>
+</ul>
+<p>Instructions of reading a disk:</p>
+<ul>
+<li>Seek track 0, platter 0 (move the read-write head)</li>
+<li>Wait for sector 0 of track 0, platter 0
+<ul>
+<li>Waiting times may be removed on the quiz!</li>
+</ul>
+</li>
+<li>Read sector 0-sector 2047 of track 0, platter 0
+<ul>
+<li>Takes one entire spin of the platter</li>
+</ul>
+</li>
+<li>Repeat for platters 1, 2, and 3
+<ul>
+<li>The movement to the other platters are instantaneous - all the read-write heads are joined together, so they&#x27;ve already moved to track 0. We don&#x27;t have to seek again.</li>
+<li>And, since we just ended on sector 2047 in platter 0, the next sector&#x27;s the exact one we&#x27;re looking for - no rotational delay either!</li>
+</ul>
+</li>
+<li>Seek track 1, platter 0
+<ul>
+<li>Since it&#x27;s an adjacent track, the (almost) best case scenario of a 1 ms delay takes place</li>
+</ul>
+</li>
+<li>Wait for sector 0 of track 1
+<ul>
+<li>You may be tempted to think about the average rotational delay. However, we already know what sector we&#x27;re on; we just finished reading sector 2047.</li>
+<li>So when we move to track 1, sector 0 of track 1 will have already rotated by; we have to wait the whole 10 ms for it to come back around.</li>
+<li>Since we&#x27;ve already spent 1 ms seeking, though, we only have to account for 9 more ms of delay.</li>
+</ul>
+</li>
+<li>Repeat process for every track</li>
+</ul>
+<blockquote>
+<p>Seek track 0, platter 0<br />
+Total time: <span class="math">10</span> ms (average seek time)</p>
+<p>Wait for sector 0, track 0, platter 0<br />
+Total time: <span class="math">10 + 5</span> ms (average rotational latency)</p>
+<p>Read sector 0-sector 2047 of track 0, platter 0<br />
+Total time: <span class="math">15 + 10</span> ms (time for one full rotation, and therefore one full reading of the track)</p>
+<p>Switch to track 0, platter 1<br />
+Total time: <span class="math">15 + 10</span> ms (No added time - switch is instantaneous)</p>
+<p>Wait for sector 0, track 0, platter 1<br />
+Total time: <span class="math">15 + 10</span> ms (No added time - we&#x27;re already at sector 0)</p>
+<p>Read sector 0-sector 2047 of track 0, platter 1<br />
+Total time: <span class="math">15 + 2(10)</span> ms (Another full spin)</p>
+<p>Repeat for track 0, platter 2 and track 0, platter 3<br />
+Total time: <span class="math">15 + 4(10)</span> ms (Four full rotations total, since there are four platters)</p>
+<p>Seek track 1, platter 0<br />
+Total time: <span class="math">15 + 40 + 1</span> ms (&quot;Best case&quot;, 1 ms delay)</p>
+<p>Wait for sector 0, track 1, platter 0<br />
+Total time: <span class="math">15 + 40 + 1 + 9</span> ms (Worst case, <span class="math">(10 - 1) = 9</span> ms delay)</p>
+<p>Read sector 0-sector 2047 of track 1, platters 0-3<br />
+Total time: <span class="math">15 + 2(40) + 10</span> ms (another full reading, another 40 ms)</p>
+<p>Seek track 2, platter 0 and wait for sector 0<br />
+Total time: <span class="math">15 + 2(40) + 2(10)</span> ms</p>
+<p>Read sector 0-sector 2047 of track 2, platters 0-3<br />
+Total time: <span class="math">15 + 3(40) + 2(10)</span> ms<br />
+Total time: <span class="math">10 + 5 + 3(40) + 2(10)</span> ms<br />
+Total time: <span class="math">5 + 3(40) + 3(10)</span> ms<br />
+Total time: <span class="math">5 + 3(40 + 10)</span> ms (done purely to make grouping easier)</p>
+<p>Repeat for tracks 4-9,999<br />
+Total time: <span class="math">5 + 10,000(40 + 10)</span> ms<br />
+Total time: <span class="math">5 + 10,000(50)</span> ms<br />
+Total time: <span class="math">500,005</span> ms<br />
+Total time: <span class="math">500.005</span> s</p>
+</blockquote>
 
                                 
                                 <!-- Required only on API pages -->
@@ -200,20 +470,20 @@ This page is a work in progress. Feel free to help contribute by creating a <a h
                             
                                 <nav class="flex mt-14">
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../term-1-cst/comp-1113/placeholder/">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../term-2-cst/comp-2721/ch3/">
                                             <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                             <span>
                                                 <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
-                                                <span class="block mt-1">Placeholder</span>
+                                                <span class="block mt-1">Chapter 3: Basic Error-​Correcting Code Theory</span>
                                             </span>
                                         </a>
                                     </div>
                             
                                     <div class="w-1/2">
-                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../term-1-cst/comp-1537/placeholder/">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../term-2-cst/comp-2721/gallery/">
                                             <span>
                                                 <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
-                                                <span class="block mt-1">Placeholder</span>
+                                                <span class="block mt-1">Gallery</span>
                                             </span>
                                             <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
                                         </a>
@@ -257,6 +527,6 @@ This page is a work in progress. Feel free to help contribute by creating a <a h
 
     <div id="docs-overlay-target"></div>
 
-    <script data-cfasync="false">window.__DOCS__ = { "title": "Placeholder", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: false, tocDepth: 23 }</script>
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Chapter 4: Mean Memory Access Time and Hard Drive Disks", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
 </body>
 </html>
