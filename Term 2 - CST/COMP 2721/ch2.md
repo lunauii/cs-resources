@@ -167,12 +167,9 @@ The principle of spatial locality states that words requested now are likely to 
 
 Continuing the Tiger Woods metaphor, if you mention Tiger Woods, you're likely to mention him again. Storing a requested word in a cache means the CPU doesn't have to fetch it from main memory again if it rerequests it.
 
-## Definition: Interpreter
+## Interpreters
 
-Any software program (aka a virtual machine) that FDE (fetches, decodes, and executes) the instructions
-of another program. The output of this is another program that is simpler to run. But, this process takes
-time. This is cheaper than having hardware run the original (more complex, higher-level) program and it
-is cheaper than having hardware do the conversion (interpretation).
+An interpreter is any software program (aka a virtual machine) that FDEs the instructions of another program. The output of this is another program that is simpler to run. Interpreters are cheaper than having hardware run the original (more complex, higher-level) program, and cheaper than having hardware do the conversion (interpretation). However, the interpretation process itself usually slows down programs.
 
 # Pipelining
 
