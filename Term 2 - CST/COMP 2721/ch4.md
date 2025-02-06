@@ -14,9 +14,8 @@ icon: git-pull-request-draft
 
 **Hit** - when a cache has the CPU's requested word\
 **Miss** - when a cache doesn't have the CPU's requested word\
-**Hit Rate** - The percentage of hits from a cache, over total requests
+**Hit Rate** - The percentage of hits from a cache, over total requests\
 **Miss Rate** - The percentage of misses from a cache, over total requests
-- Hit rates and miss rates are 
 
 **Hard Disk Drive (HDD)** - a drive consisting of platters that store data
 
