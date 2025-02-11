@@ -27,15 +27,15 @@ icon: git-pull-request-draft
 
 - **Sequential Circuit** - circuits where outputs are determined by the current inputs and past inputs
 
-- **Multiplexer** - A component that takes in n inputs and has a single 1-bit output
+- **Multiplexer** - A component that takes in $n$ inputs and has a single $1$-bit output
 
-- **Decoder** - A component that takes in a n inputs and outputs 1 on one of 2n lines
+- **Decoder** - A component that takes in a $n$ inputs and outputs $1$ on one of $2^n$ lines
 
 - **Memory Chip** (aka **Register Set**) - A component made of several flip-flops that stores several bits
 
 - **ALU** (aka **Arithmetic Logic Unit**) - A component that can perform several operations on two operands
 
-- **Bit Shifter** - A component that shifts an n-bit input
+- **Bit Shifter** - A component that shifts an $n$-bit input
 
 # Storing and Writing Memory
 
