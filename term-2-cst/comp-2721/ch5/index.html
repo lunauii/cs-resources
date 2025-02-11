@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.792547462591">
+
+    <!-- See retype.com -->
+    <meta name="generator" content="Retype 3.6.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Week 5: Memory Chips and Logic Circuits</title>
+    <meta name="title" content="Week 5: Memory Chips and Logic Circuits">
+    <meta name="description" content="Latch- A component that can write and store binary states">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://cs.lunaui.cc/term-2-cst/comp-2721/ch5/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cs.lunaui.cc/term-2-cst/comp-2721/ch5/">
+    <meta property="og:title" content="Week 5: Memory Chips and Logic Circuits">
+    <meta property="og:description" content="Latch- A component that can write and store binary states">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://cs.lunaui.cc/term-2-cst/comp-2721/ch5/">
+    <meta property="twitter:title" content="Week 5: Memory Chips and Logic Circuits">
+    <meta property="twitter:description" content="Latch- A component that can write and store binary states">
+
+    <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
+
+    <link href="../../../resources/css/retype.css?v=3.6.0.792547462591" rel="stylesheet">
+
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.792547462591" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.792547462591" data-turbo-eval="false" defer></script>
+    <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
+    <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
+</head>
+<body>
+    <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
+        <div class="absolute bottom-0 left-0 bg-gray-100 dark:bg-dark-800" style="top: 5rem; right: 50%"></div>
+    
+        <header id="docs-site-header" class="sticky top-0 z-30 flex w-full h-16 bg-white border-b border-gray-200 md:h-20 dark:bg-dark-850 dark:border-dark-650">
+            <div class="container relative flex items-center justify-between pr-6 grow md:justify-start">
+                <!-- Mobile menu button skeleton -->
+                <button v-cloak class="skeleton docs-mobile-menu-button flex items-center justify-center shrink-0 overflow-hidden dark:text-white focus:outline-none rounded-full w-10 h-10 ml-3.5 md:hidden"><svg xmlns="http://www.w3.org/2000/svg" class="mb-px shrink-0" width="24" height="24" viewBox="0 0 24 24" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor"><path d="M2 4h20v2H2zM2 11h20v2H2zM2 18h20v2H2z"></path></g></svg></button>
+                <div v-cloak id="docs-sidebar-toggle"></div>
+        
+                <!-- Logo -->
+                <div class="flex items-center justify-between h-full py-2 md:w-75">
+                    <div class="flex items-center px-2 md:px-6">
+                        <a id="docs-site-logo" href="../../../" class="flex items-center leading-snug text-2xl">
+                            <span class="grow-0 shrink-0 overflow-hidden">
+                                <img class="max-h-10 dark:hidden md:inline-block" src="../../../android-chrome-512x512.png">
+                                <img class="max-h-10 hidden dark:inline-block" src="../../../android-chrome-512x512.png">
+                            </span>
+                        </a><span class="hidden px-2 py-1 ml-4 text-sm font-semibold leading-none text-root-logo-label-text bg-root-logo-label-bg rounded-sm md:inline-block">2025.1</span>
+                    </div>
+        
+                    <span class="hidden h-8 border-r md:inline-block dark:border-dark-650"></span>
+                </div>
+        
+                <div class="flex justify-between md:grow">
+                    <!-- Top Nav -->
+                    <nav class="hidden md:flex">
+                        <ul class="flex flex-col mb-4 md:pl-16 md:mb-0 md:flex-row md:items-center">
+                            <li class="mr-6">
+                                <a class="py-2 md:mb-0 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/lunauii/cs-resources"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg> Github</a>
+                            </li>
+        
+                        </ul>
+                    </nav>
+        
+                    <!-- Header Right Skeleton -->
+                    <div v-cloak class="flex justify-end grow skeleton">
+        
+                        <!-- Search input mock -->
+                        <div class="relative hidden w-40 lg:block lg:max-w-sm lg:ml-auto">
+                            <div class="absolute flex items-center justify-center h-full pl-3 dark:text-dark-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon-base" width="16" height="16" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 1px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                            </div>
+                            <input class="w-full h-10 placeholder-gray-400 transition-colors duration-200 ease-in bg-gray-200 border border-transparent rounded md:text-sm hover:bg-white hover:border-gray-300 focus:outline-none focus:bg-white focus:border-gray-500 dark:bg-dark-600 dark:border-dark-600 dark:placeholder-dark-400" style="padding: 0.625rem 0.75rem 0.625rem 2rem" type="text" placeholder="Search">
+                        </div>
+        
+                        <!-- Mobile search button -->
+                        <div class="flex items-center justify-center w-10 h-10 lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="20" height="20" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><path d="M21.71 20.29l-3.68-3.68A8.963 8.963 0 0020 11c0-4.96-4.04-9-9-9s-9 4.04-9 9 4.04 9 9 9c2.12 0 4.07-.74 5.61-1.97l3.68 3.68c.2.19.45.29.71.29s.51-.1.71-.29c.39-.39.39-1.03 0-1.42zM4 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 1.92-.78 3.66-2.04 4.93-.01.01-.02.01-.02.01-.01.01-.01.01-.01.02A6.98 6.98 0 0111 18c-3.86 0-7-3.14-7-7z" ></path></g></svg>
+                        </div>
+        
+                        <!-- Dark mode switch placeholder -->
+                        <div class="w-10 h-10 lg:ml-2"></div>
+        
+                        <!-- History button -->
+                        <div class="flex items-center justify-center w-10 h-10" style="margin-right: -0.625rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 icon-base" width="22" height="22" viewBox="0 0 24 24" aria-labelledby="icon" role="presentation" style="margin-bottom: 0px;"><g fill="currentColor" ><g ><path d="M12.01 6.01c-.55 0-1 .45-1 1V12a1 1 0 00.4.8l3 2.22a.985.985 0 001.39-.2.996.996 0 00-.21-1.4l-2.6-1.92V7.01c.02-.55-.43-1-.98-1z"></path><path d="M12.01 1.91c-5.33 0-9.69 4.16-10.05 9.4l-.29-.26a.997.997 0 10-1.34 1.48l1.97 1.79c.19.17.43.26.67.26s.48-.09.67-.26l1.97-1.79a.997.997 0 10-1.34-1.48l-.31.28c.34-4.14 3.82-7.41 8.05-7.41 4.46 0 8.08 3.63 8.08 8.09s-3.63 8.08-8.08 8.08c-2.18 0-4.22-.85-5.75-2.4a.996.996 0 10-1.42 1.4 10.02 10.02 0 007.17 2.99c5.56 0 10.08-4.52 10.08-10.08.01-5.56-4.52-10.09-10.08-10.09z"></path></g></g></svg>
+                        </div>
+                    </div>
+        
+                    <div v-cloak class="flex justify-end grow">
+                        <div id="docs-mobile-search-button"></div>
+                        <doc-search-desktop></doc-search-desktop>
+        
+                        <doc-theme-switch class="lg:ml-2"></doc-theme-switch>
+                        <doc-history></doc-history>
+                    </div>
+                </div>
+            </div>
+        </header>
+    
+        <div class="container relative flex bg-white">
+            <!-- Sidebar Skeleton -->
+            <div v-cloak class="fixed flex flex-col shrink-0 duration-300 ease-in-out bg-gray-100 border-gray-200 sidebar top-20 w-75 border-r h-screen md:sticky transition-transform skeleton dark:bg-dark-800 dark:border-dark-650">
+            
+                <!-- Render this div, if config.showSidebarFilter is `true` -->
+                <div class="flex items-center h-16 px-6">
+                    <input class="w-full h-8 px-3 py-2 transition-colors duration-200 ease-linear bg-white border border-gray-200 rounded shadow-none text-sm focus:outline-none focus:border-gray-600 dark:bg-dark-600 dark:border-dark-600" type="text" placeholder="Filter">
+                </div>
+            
+                <div class="pl-6 mt-1 mb-4">
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-32 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-48 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                    <div class="w-40 h-3 mb-4 bg-gray-200 rounded-full loading dark:bg-dark-600"></div>
+                </div>
+            
+                <div class="shrink-0 mt-auto bg-transparent dark:border-dark-650">
+                    <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                        <span class="text-xs whitespace-nowrap">Powered by</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Sidebar component -->
+            <doc-sidebar v-cloak>
+                <template #sidebar-footer>
+                    <div class="shrink-0 mt-auto border-t md:bg-transparent md:border-none dark:border-dark-650">
+            
+                        <div class="py-3 px-6 md:hidden border-b dark:border-dark-650">
+                            <nav>
+                                <ul class="flex flex-wrap justify-center items-center">
+                                    <li class="mr-6">
+                                        <a class="block py-1 inline-flex items-center text-sm whitespace-nowrap transition-colors duration-200 ease-linear md:text-blue-500 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200" href="https://github.com/lunauii/cs-resources"><svg xmlns="http://www.w3.org/2000/svg" class="docs-icon" viewBox="0 0 24 24" role="presentation"><g fill="currentColor"><g><symbol id="mark-github-icon-symbol" viewBox="0 0 16 16"><path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"/></symbol><use xlink:href="#mark-github-icon-symbol" /></g></g></svg> Github</a>
+                                    </li>
+            
+                                </ul>
+                            </nav>
+                        </div>
+            
+                        <a class="flex items-center justify-center flex-nowrap h-16 text-gray-400 dark:text-dark-400 hover:text-gray-700 dark:hover:text-dark-300 transition-colors duration-150 ease-in docs-powered-by" target="_blank" href="https://retype.com/" rel="noopener">
+                            <span class="text-xs whitespace-nowrap">Powered by</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-2" fill="currentColor" width="96" height="20" overflow="visible"><path d="M0 0v20h13.59V0H0zm11.15 17.54H2.44V2.46h8.71v15.08zM15.8 20h2.44V4.67L15.8 2.22zM20.45 6.89V20h2.44V9.34z"/><g><path d="M40.16 8.44c0 1.49-.59 2.45-1.75 2.88l2.34 3.32h-2.53l-2.04-2.96h-1.43v2.96h-2.06V5.36h3.5c1.43 0 2.46.24 3.07.73s.9 1.27.9 2.35zm-2.48 1.1c.26-.23.38-.59.38-1.09 0-.5-.13-.84-.4-1.03s-.73-.28-1.39-.28h-1.54v2.75h1.5c.72 0 1.2-.12 1.45-.35zM51.56 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92h4.74v1.83h-6.79V5.36h6.64zM60.09 7.15v7.48h-2.06V7.15h-2.61V5.36h7.28v1.79h-2.61zM70.81 14.64h-2.06v-3.66l-3.19-5.61h2.23l1.99 3.45 1.99-3.45H74l-3.19 5.61v3.66zM83.99 6.19c.65.55.97 1.4.97 2.55s-.33 1.98-1 2.51-1.68.8-3.04.8h-1.23v2.59h-2.06V5.36h3.26c1.42 0 2.45.28 3.1.83zm-1.51 3.65c.25-.28.37-.69.37-1.22s-.16-.92-.48-1.14c-.32-.23-.82-.34-1.5-.34H79.7v3.12h1.38c.68 0 1.15-.14 1.4-.42zM95.85 5.36V7.2h-4.59v1.91h4.13v1.76h-4.13v1.92H96v1.83h-6.79V5.36h6.64z"/></g></svg>
+                        </a>
+                    </div>
+                </template>
+            </doc-sidebar>
+    
+            <div class="grow min-w-0 dark:bg-dark-850">
+                <!-- Render "toolbar" template here on api pages --><!-- Render page content -->
+                <div class="flex">
+                    <div class="min-w-0 p-4 grow md:px-16">
+                        <main class="relative pb-12 lg:pt-2">
+                            <div class="docs-markdown" id="docs-content">
+                                <!-- Rendered if sidebar right is enabled -->
+                                <div id="docs-sidebar-right-toggle"></div>
+                                <!-- Page content  -->
+<doc-anchor-target id="week-5-memory-chips-and-logic-circuits" class="break-words">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#week-5-memory-chips-and-logic-circuits">#</doc-anchor-trigger>
+        <span>Week 5: Memory Chips and Logic Circuits</span>
+    </h1>
+</doc-anchor-target>
+<div class="-mt-3 mb-12 flex flex-wrap text-sm text-gray-400 dark:text-dark-350 items-center">
+    <div class="flex items-center">
+        <div>By</div>
+        <div class="ml-2 flex items-center">
+          <div class="shrink-0 w-8 h-8 overflow-hidden rounded-full">
+            <img class="object-cover" src="https://avatars.githubusercontent.com/u/180433833?s=64&amp;v=4">
+          </div>
+          <div class="ml-1 whitespace-nowrap text-gray-500 dark:text-dark-350">mordinario</div>
+        </div>
+    </div>
+</div>
+
+<doc-anchor-target id="terminology">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#terminology">#</doc-anchor-trigger>
+        <span>Terminology</span>
+    </h2>
+</doc-anchor-target>
+<ul>
+<li><p><strong>Latch</strong> - A component that can write and store binary states</p>
+</li>
+<li><p><strong>SR Latch</strong> (aka <strong>Set/Reset Latch</strong>) - A latch with two inputs; set and reset</p>
+</li>
+<li><p><strong>Feedback</strong> - When the output of a circuit is fed back into the circuit as input</p>
+</li>
+<li><p><strong>D Latch</strong> (aka <strong>Data Latch</strong>) - A latch with a single input; data</p>
+</li>
+<li><p><strong>Enable</strong> - An input whose purpose is to allow or deny the passing through of another input</p>
+</li>
+<li><p><strong>Rising-Edge Trigger</strong> (aka <em>Pulse Generator</em>) -  A component that generates a pulse</p>
+</li>
+<li><p><strong>Flip-Flop</strong> - A component that can write and store binary states, using a clock</p>
+</li>
+<li><p><strong>Combinational Circuit</strong> - circuits where outputs are completely determined by the current inputs</p>
+</li>
+<li><p><strong>Sequential Circuit</strong> - circuits where outputs are determined by the current inputs and past inputs</p>
+</li>
+<li><p><strong>Multiplexer</strong> - A component that takes in n inputs and has a single 1-bit output</p>
+</li>
+<li><p><strong>Decoder</strong> - A component that takes in a n inputs and outputs 1 on one of 2n lines</p>
+</li>
+<li><p><strong>Memory Chip</strong> (aka <strong>Register Set</strong>) - A component made of several flip-flops that stores several bits</p>
+</li>
+<li><p><strong>ALU</strong> (aka <strong>Arithmetic Logic Unit</strong>) - A component that can perform several operations on two operands</p>
+</li>
+<li><p><strong>Bit Shifter</strong> - A component that shifts an n-bit input</p>
+</li>
+</ul>
+<doc-anchor-target id="storing-and-writing-memory">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#storing-and-writing-memory">#</doc-anchor-trigger>
+        <span>Storing and Writing Memory</span>
+    </h1>
+</doc-anchor-target>
+<p>Storing and writing memory is hard. We need to do three things in order to have a functioning memory chip:</p>
+<ul>
+<li>Set bits</li>
+<li>Reset bits</li>
+<li>Store bits</li>
+</ul>
+<p>Computer engineers went through four designs until we landed on one that was good:</p>
+<ul>
+<li>SR latches</li>
+<li>Unclocked D latches</li>
+<li>Clocked D latches</li>
+<li>Flip-flops</li>
+</ul>
+<doc-anchor-target id="sr-latch">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#sr-latch">#</doc-anchor-trigger>
+        <span>SR Latch</span>
+    </h2>
+</doc-anchor-target>
+<p>A <strong>latch</strong> is a circuit that alters its output every time its input changes, like most electronic circuits we’ve seen so far (in COMP 1113).
+An <strong>SR latch</strong> (or a <strong>Set/Reset Latch</strong>) is the first step to creating memory. SR latches involve two inputs and two outputs:<br />
+Inputs:</p>
+<ul>
+<li>Set line (or <span class="math">S</span>)</li>
+<li>Reset line (or <span class="math">R</span>)</li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li>Memory bit (or <span class="math">Q</span>)</li>
+<li>Q’s complement (<span class="math">\overline Q</span>, part of the circuit, but generally not used)</li>
+</ul>
+<p>The &quot;set&quot; line of an SR latch sets the memory bit (<span class="math">Q</span>) to 1. The &quot;reset&quot; line of an SR latch <em>re</em>sets <span class="math">Q</span> to 0.</p>
+<p><figure class="content-center">
+    <img src="../diagrams/10_sr_latch.png" alt="The design and states of a NOR latch. A truth table of a NOR gate is also shown.">
+    <figcaption class="caption">The design and states of a NOR latch. A truth table of a NOR gate is also shown.</figcaption>
+</figure>
+</p>
+<p>This circuit contains <strong>feedback</strong> - an output being routed back into the circuit as inputs.</p>
+<ul>
+<li>In order to store memory, you need to be able to store previous outputs</li>
+<li>Feeding those outputs back in is what creates that memory</li>
+</ul>
+<p>“Set” (<span class="math">S</span>) sets <span class="math">Q = 1</span>. “Reset” (<span class="math">R</span>) sets <span class="math">Q = 0</span>. Setting neither <span class="math">S</span> or <span class="math">R</span> to <span class="math">1</span> keeps <span class="math">Q</span> as its current value.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math">S</span></th>
+<th style="text-align: center;"><span class="math">R</span></th>
+<th style="text-align: center;"><span class="math">Q</span></th>
+<th style="text-align: center;"><span class="math">\overline Q</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Q</td>
+<td style="text-align: center;">!Q</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>SR latches can</p>
+<ul>
+<li>set bits,</li>
+<li>reset bits, and</li>
+<li>store bits.</li>
+</ul>
+<p>We have everything we need to create memory!
+However, you&#x27;ll notice the truth table is missing a row. What if we set BOTH <span class="math">S</span> and <span class="math">R</span> to <span class="math">1</span>, at the same time?</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math">S</span></th>
+<th style="text-align: center;"><span class="math">R</span></th>
+<th style="text-align: center;"><span class="math">Q</span></th>
+<th style="text-align: center;"><span class="math">\overline Q</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Q</td>
+<td style="text-align: center;">!Q</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">!!</td>
+<td style="text-align: center;">!!</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The only stable state in this situation is <span class="math">Q = \overline Q = 0</span>. This is not good, for two reasons:</p>
+<ul>
+<li><span class="math">Q</span> should NEVER be equal to its complement, as they&#x27;re supposed to be opposites</li>
+<li>As soon as either <span class="math">S</span> or <span class="math">R</span> stop sending a 1, <span class="math">Q</span> will jump to either 1 or 0, meaning the circuit is nondeterministic</li>
+</ul>
+<p>Imagine a light bulb. Can be turned on, can be turned off, can be left alone. It CAN’T, however, be turned both on and off at the same time. This would cause a problem. We want to make sure only one state can be on at a time.</p>
+<doc-anchor-target id="d-latch">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#d-latch">#</doc-anchor-trigger>
+        <span>D Latch</span>
+    </h2>
+</doc-anchor-target>
+<p>The easiest way to make sure only one state can be active at a time is to eliminate any invalid inputs. The SR latch&#x27;s invalid input was when <span class="math">S = R = 1</span>. We can eliminate that by setting the reset line to be the complement of the set line.</p>
+<p>A <strong>D latch (data latch)</strong> does just that. It features only one input, which sets <span class="math">Q</span> to either <span class="math">0</span> or <span class="math">1</span> based on the input line.</p>
+<p>Only one input:</p>
+<ul>
+<li>Set (<span class="math">S</span>)</li>
+</ul>
+<p>Same outputs as before:</p>
+<ul>
+<li><span class="math">Q</span></li>
+<li><span class="math">\overline Q</span></li>
+</ul>
+<p><figure class="content-center">
+    <img src="../diagrams/11_d_latch.png" alt="Image of the two states of a D latch circuit.">
+    <figcaption class="caption">Image of the two states of a D latch circuit.</figcaption>
+</figure>
+</p>
+<p>This is a fix to the S/R latch; it makes it impossible for S and R to both equal 1. However, S and R can’t both equal 0 either - meaning this circuit can’t hold memory.</p>
+<p>D latches can only</p>
+<ul>
+<li>set bits, and</li>
+<li>reset bits.</li>
+</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math">S</span></th>
+<th style="text-align: center;"><span class="math">Q</span></th>
+<th style="text-align: center;"><span class="math">\overline Q</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><span class="math">Q</span> always changes whenever <span class="math">S</span> changes. In order to store memory, we need to be able to freeze reading from the input.</p>
+<doc-anchor-target id="clocked-d-latch">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#clocked-d-latch">#</doc-anchor-trigger>
+        <span>Clocked D Latch</span>
+    </h2>
+</doc-anchor-target>
+<p>We accomplish input freezing with <strong>clock lines</strong>. As a reminder, clocks are anything that can be turned on and off. Clock lines are used to affect input lines based on if they&#x27;re on or off.</p>
+<p>Inputs:</p>
+<ul>
+<li><span class="math">S</span></li>
+<li>Clock (<span class="math">CLK</span>)</li>
+</ul>
+<p>Outputs:</p>
+<ul>
+<li><span class="math">Q</span></li>
+</ul>
+<p><figure class="content-center">
+    <img src="../diagrams/12_clocked_d_latch.png" alt="Image of a clocked D latch.">
+    <figcaption class="caption">Image of a clocked D latch.</figcaption>
+</figure>
+</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math">CLK</span></th>
+<th style="text-align: center;"><span class="math">S</span></th>
+<th style="text-align: center;"><span class="math">Q</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Q</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Q</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Adding another input means we can store memory again! Whenever the clock is <span class="math">0</span>, data writing freezes, and the state of <span class="math">Q</span> is stored. Whenever it&#x27;s <span class="math">1</span>, <span class="math">Q</span> reads the value from <span class="math">S</span> and sets it as its new value.</p>
+<p>Clocked D latches can</p>
+<ul>
+<li>set bits,</li>
+<li>reset bits, and</li>
+<li>store bits.</li>
+</ul>
+<p>Now, clocked D latches work fine, but the “problem” is they can&#x27;t be scaled up without worrying about synchronization - if we want to use multiple clocked D latches in memory, they all have to operate at the same time. Good thing we have a thing for that!</p>
+<p>(By the way, it&#x27;s important to distinguish clock lines from data input lines. Data input lines <em>send</em> data into a circuit. Clock lines <em>enable</em> data to be sent into a circuit.)</p>
+<doc-anchor-target id="rising-edge-triggers-pulse-generators">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#rising-edge-triggers-pulse-generators">#</doc-anchor-trigger>
+        <span>Rising-Edge Triggers (Pulse Generators)</span>
+    </h2>
+</doc-anchor-target>
+<p>A <strong>rising-edge trigger</strong> (or <strong>pulse generator</strong>) creates a short, but very clear pulse. It generates pulses by taking advantage of how NOT gates function.</p>
+<p>Hold on this&#x27;ll make sense if you look at it first</p>
+<p><figure class="content-center">
+    <img src="../diagrams/13_pulse_generator.png" alt="An image of a pulse generator circuit.">
+    <figcaption class="caption">An image of a pulse generator circuit.</figcaption>
+</figure>
+</p>
+<p>A NOT gate into an AND gate might look stupid. <span class="math">A * \overline A = 0</span>, after all. While this is still true, there&#x27;s a very short delay between the inputs of a logic gate and the output.</p>
+<p>Say you&#x27;re sending a <span class="math">1</span> through a NOT gate. There&#x27;s going to be a very small, but existent delay between sending in that <span class="math">1</span> and getting a <span class="math">0</span> from the output. This circuit takes advantage of that delay. Check the timing in the figure.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Stages</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><span class="math">a</span></td>
+<td style="text-align: center;"><span class="math">b = \overline a</span></td>
+<td style="text-align: center;"><span class="math">c = a</span></td>
+<td style="text-align: center;"><span class="math">d = b * c</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>It&#x27;s called a rising-edge trigger because, well, it triggers whenever there&#x27;s a rising edge.</p>
+<p>We can use this pulse for:</p>
+<ul>
+<li>Sampling the state of a data line</li>
+<li>Synchronizing the clocks of several clocked D latches</li>
+</ul>
+<p>The clocks in clocked D latches shouldn’t be going off on their own; they should all be on/off at the same time. We can do that by connecting all of them to a single pulse generator.</p>
+<doc-anchor-target id="flip-flop">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#flip-flop">#</doc-anchor-trigger>
+        <span>Flip-Flop</span>
+    </h2>
+</doc-anchor-target>
+<p>A flip-flop is a circuit that alters its output whenever its clock line is set to <span class="math">1</span>. This is in contrast to latches, which always altered their output whenever the data input changed.</p>
+<p>A <strong>D flip-flop</strong> (or <strong>data flip-flop</strong>) is a combination of a clocked D latch and a pulse generator.</p>
+<p><figure class="content-center">
+    <img src="../diagrams/14_d_flip_flop.png" alt="Image of a D flip-flop circuit.">
+    <figcaption class="caption">Image of a D flip-flop circuit.</figcaption>
+</figure>
+</p>
+<p>Because of the AND gate combining the data line and the clock, the data line can only change the stored bit when the clock pin outputs a <span class="math">1</span>. This lets us store bits!</p>
+<p>One potential concern is that the data pin may change while the clock is inputting <span class="math">1</span>. But as long as the generated pulse is short enough, the window for the data to change should be short enough to where that isn&#x27;t an issue.</p>
+<p>If you want to store multiple bits, you can use several D flip-flops at once and connect them all to a single pulse generator. This synchronizes all of them.</p>
+<p><figure class="content-center">
+    <img src="../diagrams/15_register_diagram.png" alt="Image of a memory register comprised of multiple flip-flops.">
+    <figcaption class="caption">Image of a memory register comprised of multiple flip-flops.</figcaption>
+</figure>
+</p>
+<p>Each bit is written to on the rising edge of the clock. The pulse generator puts 1 into all 8 AND gates, and the data lines can write to the latches. When the pulse generator inputs 0, the D latches can’t write data, and all four bits are “frozen” as memory.</p>
+<doc-anchor-target id="multiplexers">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#multiplexers">#</doc-anchor-trigger>
+        <span>Multiplexers</span>
+    </h1>
+</doc-anchor-target>
+<p><strong>Multiplexers</strong> are components that take in <span class="math">2^n</span> input lines, and decide which line to output based on the combination of <span class="math">n</span> control lines.</p>
+<p>Multiplexers are combinational circuits:</p>
+<ul>
+<li>A <strong>combinational circuit</strong> is a circuit whose output SOLELY relies on its current combination of inputs, and NOT on any past inputs.</li>
+<li>The inverse is a <strong>sequential circuit</strong>, where the output depends not just on the current inputs, but on past inputs too.</li>
+</ul>
+<p>Multiplexers have:</p>
+<ul>
+<li><span class="math">2^n</span> inputs</li>
+<li><span class="math">n</span> control signals</li>
+<li><span class="math">1</span> output</li>
+</ul>
+<p><figure class="content-center">
+    <img src="../diagrams/16_multiplexer.png" alt="Image of a multiplexer circuit. This one has 3 control lines and 2^3 = 8 inputs.">
+    <figcaption class="caption">Image of a multiplexer circuit. This one has 3 control lines and 2^3 = 8 inputs.</figcaption>
+</figure>
+</p>
+<p>Multiplexers consist of several AND gates and a single OR gate. Any AND gate that outputs a <span class="math">1</span> will make the OR gate output a <span class="math">1</span>. Each AND gate connects a single data input and a unique combination of the control signals. The control signals basically encode an <span class="math">n</span>-bit number into each AND gate, and whatever <span class="math">n</span>-bit number the control signal equals is which AND gate is selected.</p>
+<ul>
+<li>Only one AND gate can be selected at a time.</li>
+</ul>
+<p>Multiplexers are used for:</p>
+<ul>
+<li>Selecting a specific data input line (not how we use them)</li>
+<li>Programmable Boolean logic (how we use them)</li>
+</ul>
+<p>For selecting data input lines, each input line is connected to a separate data source, and the control lines determine which input line to send through. Jason uses a talent show analogy; imagine a talent show with 2n contestants, n judges, and 1 contestant to be the winner. The judges&#x27; decisions decide which contestant to be the winner.</p>
+<ul>
+<li>If you want to send a different input line through the multiplexer, simply change the control lines to select the right one.</li>
+</ul>
+<p>For programming Boolean logic, each control line is connected to a variable in the logic, and each data input is connected to either ground (logical <span class="math">0</span>) or power (<span class="math">V_cc</span>, logical <span class="math">1</span>), based on the truth table of the logic. This means that whenever a specific combination of the control signals connects to an AND gate with a data input already outputting <span class="math">1</span>, it&#x27;ll automatically pass through to the OR gate, and the multiplexer will output <span class="math">1</span>.</p>
+<doc-anchor-target id="boolean-logic-with-multiplexers">
+    <h3>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#boolean-logic-with-multiplexers">#</doc-anchor-trigger>
+        <span>Boolean Logic with Multiplexers</span>
+    </h3>
+</doc-anchor-target>
+<p>Let&#x27;s pull up a truth table.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math">A</span></th>
+<th style="text-align: center;"><span class="math">B</span></th>
+<th style="text-align: center;"><span class="math">C</span></th>
+<th style="text-align: center;"><span class="math">M</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>This truth table has three variables, and eight possible combinations. For each combination that equals a <span class="math">0</span> in the truth table, we can set that respective data input to <span class="math">0</span>. For each combination that equals a <span class="math">1</span> in the truth table, we can set that respective data input to <span class="math">1</span>.</p>
+<p>For example, rows $0, <span class="math">1</span>, <span class="math">2</span>, and <span class="math">4</span> all equal <span class="math">0</span>, so we connect data inputs <span class="math">D_0</span>, <span class="math">D_1</span>, <span class="math">D_2</span>, and <span class="math">D_4</span> all to ground. Rows $3, <span class="math">5</span>, <span class="math">6</span>, and <span class="math">7</span> all equal <span class="math">1</span>, so we connect data inputs <span class="math">D_0</span>, <span class="math">D_1</span>, <span class="math">D_2</span>, and <span class="math">D_4</span> all to power.</p>
+<p><figure class="content-center">
+    <img src="../diagrams/17_multiplexer_boolean.png" alt="An image of a multiplexer schematic, as well as that same schematic representing the truth table.">
+    <figcaption class="caption">An image of a multiplexer schematic, as well as that same schematic representing the truth table.</figcaption>
+</figure>
+</p>
+<p>If you want to create a circuit with multiplexers, you’ll need a circuit with 1 multiplexer for each output. For example, let&#x27;s look at a 1-bit half-adder.</p>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math">A</span></th>
+<th style="text-align: center;"><span class="math">B</span></th>
+<th style="text-align: center;"><span class="math">Sum</span></th>
+<th style="text-align: center;"><span class="math">C_{out}</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>As there are two outputs, we&#x27;ll need three multiplexers.</p>
+<p>Ex: draw a multiplexer implementation of the following problem:</p>
+<ul>
+<li>A red light goes on if the water stream is:
+<ul>
+<li>too high<br />
+AND</li>
+<li>too hot</li>
+</ul>
+</li>
+<li>A green light goes on if the water stream is:
+<ul>
+<li>too cold<br />
+OR</li>
+<li>too low</li>
+</ul>
+</li>
+<li>A blue light goes on if the water stream is:
+<ul>
+<li>too hot<br />
+AND</li>
+<li>too pressurized</li>
+</ul>
+</li>
+</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Input</th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Output</th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Water high</td>
+<td style="text-align: center;">Water hot</td>
+<td style="text-align: center;">Water pressurized</td>
+<td style="text-align: center;">Red</td>
+<td style="text-align: center;">Green</td>
+<td style="text-align: center;">Blue</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>We&#x27;ll need three multiplexers for three outputs, and connect the each data line to ground/power according to the truth table. I&#x27;d draw it out, but I don&#x27;t feel like it.</p>
+<doc-anchor-target id="decoders">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#decoders">#</doc-anchor-trigger>
+        <span>Decoders</span>
+    </h1>
+</doc-anchor-target>
+<p>A <strong>decoder</strong> is a circuit that decodes an <span class="math">n</span> bits of input and outputs a single <span class="math">1</span> in one of <span class="math">2^n</span> data lines accordingly. Like multiplexers, decoders are combinational circuits.</p>
+<p>Decoders have:</p>
+<ul>
+<li>One <span class="math">n</span>-bit input</li>
+<li><span class="math">2^n</span> outputs</li>
+</ul>
+<p><figure class="content-center">
+    <img src="../diagrams/18_decoder.png" alt="A decoder circuit.">
+    <figcaption class="caption">A decoder circuit.</figcaption>
+</figure>
+</p>
+<p>Each combination of the <span class="math">n</span>-bit input is connected to an AND gate, leading to an output line. This means there&#x27;s <span class="math">2^n</span> AND gates. The decoder selects an output based on the input.</p>
+<doc-anchor-target id="memory-chips">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memory-chips">#</doc-anchor-trigger>
+        <span>Memory Chips</span>
+    </h1>
+</doc-anchor-target>
+<p>This is a 4x3 memory chip (or register set).</p>
+<p><figure class="content-center">
+    <img src="../diagrams/19_memory_chip.png" alt="A 4x3 memory chip.">
+    <figcaption class="caption">A 4x3 memory chip.</figcaption>
+</figure>
+</p>
+<p>It holds four 3-bit words, each row being a 3-bit word. Each “<span class="math">D</span> <span class="math">Q</span> <span class="math">CK</span>” box in the diagram is a D flip-flop. As a reminder:</p>
+<ul>
+<li><span class="math">D</span> - Data</li>
+<li><span class="math">Q</span> - Output/Memory</li>
+<li><span class="math">CK</span> - Clock
+<ul>
+<li>When the clock is <span class="math">0</span>, <span class="math">Q</span> doesn&#x27;t change</li>
+<li>When the clock is <span class="math">1</span>, <span class="math">Q</span> becomes the value of the data line</li>
+</ul>
+</li>
+</ul>
+<p>You&#x27;ll also notice inputs specific to memory chips:</p>
+<p>2 <strong>address lines</strong> (<span class="math">A_0</span>, <span class="math">A_1</span>)</p>
+<ul>
+<li><span class="math">2^2</span> = 4 combinations, one for each word</li>
+<li>Depending on which combination they are, that specific word will be accessed</li>
+</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math">A_0</span></th>
+<th style="text-align: center;"><span class="math">A_1</span></th>
+<th style="text-align: center;">Selected Word</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>3 <strong>data input lines</strong> (<span class="math">I_0</span>, <span class="math">I_1</span>, <span class="math">I_2</span>)</p>
+<ul>
+<li>Each input lines’ output will be stored onto the bit when the clock input is on
+<ul>
+<li>At least, if that word address is selected</li>
+</ul>
+</li>
+<li>Data is written to a word all at once - you can’t change individual bits</li>
+</ul>
+<p>A <strong>Chip Select</strong> (<span class="math">CS</span>) line</p>
+<ul>
+<li>Represents if the current chip is being selected</li>
+<li>Used in conjunction with multiple chips - you need to signify you&#x27;re only sending signals to a specific chip when all the clocks are synchronized between them</li>
+</ul>
+<p>A <strong>Read</strong> (<span class="math">RD</span>) line</p>
+<ul>
+<li>Represents if the current chip is being read from</li>
+<li>Data can only be written to this chip if the <span class="math">CS</span> line sends <span class="math">1</span> AND the <span class="math">RD</span> line sends <span class="math">0</span></li>
+</ul>
+<p>An <strong>Output Enable</strong> (<span class="math">OE</span>) line</p>
+<ul>
+<li>Represents if the output from this chip is being read</li>
+<li>Data can only be outputted from this chip if the <span class="math">CS</span>, <span class="math">RD</span>, and <span class="math">OE</span> lines all send <span class="math">1</span></li>
+</ul>
+<p>Tri-state noninverting <strong>buffers</strong></p>
+<ul>
+<li>A <strong>buffer</strong> has three states:
+<ul>
+<li><span class="math">0</span></li>
+<li><span class="math">1</span></li>
+<li>Nothing (no output)</li>
+</ul>
+</li>
+<li>Buffers generally look like NOT gates but without the circle</li>
+<li>Tri-state buffers have two inputs (a data line and a control line)
+<ul>
+<li>If the control line sends high, the output is the data line</li>
+<li>If the control line sends low, the buffer doesn&#x27;t send any output - like that component&#x27;s been cut from the circuit</li>
+</ul>
+</li>
+</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math">C</span></th>
+<th style="text-align: center;"><span class="math">D</span></th>
+<th style="text-align: center;"><span class="math">Q</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">Nothing</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Nothing</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<doc-anchor-target id="memory-chip-sample-quiz-questions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#memory-chip-sample-quiz-questions">#</doc-anchor-trigger>
+        <span>Memory Chip Sample Quiz Questions</span>
+    </h2>
+</doc-anchor-target>
+<p>What are all the input/output values required to write 001 to word 3 of a 4x3 memory chip?</p>
+<ul>
+<li><span class="math">CS</span> - <span class="math">1</span> (We want to select this chip)</li>
+<li><span class="math">RD</span> - <span class="math">0</span> (We’re not reading from this chip)</li>
+<li><span class="math">OE</span> - N/A (We don’t need the output; whatever this is set to is irrelevant)</li>
+<li><span class="math">A_0</span>, <span class="math">A_1</span> - <span class="math">11</span> (Selecting address <span class="math">11_2</span> - address <span class="math">3_{10}</span> - word 3)</li>
+<li><span class="math">I_0</span>, <span class="math">I_1</span>, <span class="math">I_2</span> - <span class="math">001</span> (writing <span class="math">001</span> to the selected address)</li>
+</ul>
+<p>What are all the input/output values required to read word 0 of a 4x3 memory chip?</p>
+<ul>
+<li><span class="math">CS</span> - 1 (We want to select this chip)</li>
+<li><span class="math">RD</span> - 1 (We’re reading from this chip)</li>
+<li><span class="math">OE</span> - 1 (We need output in order to read from this chip)</li>
+<li><span class="math">A_0</span>, <span class="math">A_1</span> - 00 (Selecting address <span class="math">00_2</span> - address <span class="math">0_{10}</span> - word 0)</li>
+<li><span class="math">I_0</span>, <span class="math">I_1</span>, <span class="math">I_2</span> - N/A (we’re not writing; whatever this is set to is irrelevant)</li>
+</ul>
+<p>Quiz question - What are all the input/output values required to write 110 to word 1 of a 4x3 memory chip?</p>
+<ul>
+<li>CS - 1 (We want to select this chip)</li>
+<li>RD - 0 (We’re not reading from this chip)</li>
+<li>OE - N/A (We don’t need the output; whatever this is set to is irrelevant)</li>
+<li><span class="math">A_0</span>, <span class="math">A_1</span> - 00 (Selecting address <span class="math">01_2</span> - address <span class="math">1_{10}</span> - word 1)</li>
+<li><span class="math">I_0</span>, <span class="math">I_1</span>, <span class="math">I_2</span> - 110 (writing <span class="math">110</span> to the selected address)</li>
+</ul>
+<doc-anchor-target id="arithmetic-logic-units-alus">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#arithmetic-logic-units-alus">#</doc-anchor-trigger>
+        <span>Arithmetic Logic Units (ALUs)</span>
+    </h1>
+</doc-anchor-target>
+<p>An <strong>arithmetic logic unit</strong> (or an <strong>ALU</strong>) is a component that takes in three inputs (<span class="math">A</span>, <span class="math">B</span>, <span class="math">C_{in}</span>) and performs one of four operations on them:</p>
+<ul>
+<li><span class="math">AB</span> (AND)</li>
+<li><span class="math">A + B</span> (OR)</li>
+<li><span class="math">\overline B</span> (negation)</li>
+<li><span class="math">A + B + C_{in}</span> (full addition - two bits and a carry in)</li>
+</ul>
+<p><figure class="content-center">
+    <img src="../diagrams/20_alu.png" alt="Diagram of a 1-bit ALU.">
+    <figcaption class="caption">Diagram of a 1-bit ALU.</figcaption>
+</figure>
+</p>
+<p>A 1-bit ALU consists of six input lines:</p>
+<ul>
+<li><span class="math">A</span>
+<ul>
+<li><span class="math">INV_A</span> - Invert A (inverts A input)</li>
+<li><span class="math">EN_A</span> - Enable A (enables A input)</li>
+</ul>
+</li>
+<li><span class="math">B</span>
+<ul>
+<li><span class="math">EN_B</span> - Enable B (enables B input)</li>
+</ul>
+</li>
+<li><span class="math">C_{in}</span> (carry in)</li>
+</ul>
+<p>A 1-bit ALU also contains:</p>
+<ul>
+<li>A <strong>decoder</strong>
+<ul>
+<li><span class="math">F_0</span> and <span class="math">F_1</span> as input - they decide which operation (AND, OR, NOT, Addition) to enable</li>
+</ul>
+</li>
+</ul>
+<div class="table-wrapper scrollbar overflow-hidden">
+<table class="comfortable">
+<thead>
+<tr>
+<th style="text-align: center;"><span class="math">F_0</span> Value</th>
+<th style="text-align: center;"><span class="math">F_1</span> Value</th>
+<th style="text-align: center;">Enabled operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">AND</td>
+</tr>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">OR</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">NOT</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Full adder</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>A <strong>logical unit</strong>
+<ul>
+<li>Contains the AND, OR, and NOT gates, each output of which is inputted to separate AND gates</li>
+<li>The other input of each AND gate is the enable lines from the decoder</li>
+</ul>
+</li>
+<li>A <strong>full adder</strong>
+<ul>
+<li>Adds <span class="math">A</span>, <span class="math">B</span>, and <span class="math">C_{in}</span> together, if the ALU&#x27;s doing full addition</li>
+</ul>
+</li>
+<li>Output lines
+<ul>
+<li><span class="math">Q</span> (output) (I&#x27;m not <em>actually</em> sure if it&#x27;s signified with Q, but like, it makes sense.)</li>
+<li><span class="math">C_{out}</span> (carry out, for full addition)</li>
+</ul>
+</li>
+</ul>
+<doc-anchor-target id="alu-sample-quiz-questions">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#alu-sample-quiz-questions">#</doc-anchor-trigger>
+        <span>ALU Sample Quiz Questions</span>
+    </h2>
+</doc-anchor-target>
+<p>What are all the input/output values required to perform the operation 0 AND 1?</p>
+<ul>
+<li><span class="math">F_0</span>, <span class="math">F_1</span> - <span class="math">00</span> (enables AND gate)</li>
+<li><span class="math">EN_A</span> - <span class="math">1</span> (we’re inputting <span class="math">A</span>)</li>
+<li><span class="math">A</span> - <span class="math">0</span> (first operand is <span class="math">0</span>)</li>
+<li><span class="math">INV_A</span> - <span class="math">0</span> (we aren’t inverting <span class="math">A</span>)</li>
+<li><span class="math">EN_B</span> - <span class="math">1</span> (we’re inputting <span class="math">B</span>)</li>
+<li><span class="math">B</span> - <span class="math">1</span> (second operand is <span class="math">1</span>)</li>
+<li><span class="math">C_{in}</span> - N/A (not doing full addition; carry-in is irrelevant)</li>
+<li><span class="math">C_{out}</span> - N/A (not doing full addition; carry-out is irrelevant)</li>
+<li><span class="math">Q</span> - <span class="math">0</span> (<span class="math">0 * 1 = 0</span>)</li>
+</ul>
+<p>Quiz question - What are all the input/output values required to perform the operation NOT 1?</p>
+<ul>
+<li><span class="math">F_0</span>, <span class="math">F_1</span> - 10 (enables NOT gate)</li>
+<li><span class="math">EN_A</span> - <span class="math">0</span> (we aren’t inputting <span class="math">A</span>)</li>
+<li><span class="math">A</span> - N/A (using the NOT gate only uses the <span class="math">B</span> input)</li>
+<li><span class="math">INV_A</span> - N/A (we aren’t inputting <span class="math">A</span>)</li>
+<li><span class="math">EN_B</span> - <span class="math">1</span> (we’re inputting B)</li>
+<li><span class="math">B</span> - <span class="math">1</span> (NOT operand is <span class="math">1</span>)</li>
+<li><span class="math">C_{in}</span> - N/A (not doing full addition; carry-in is irrelevant)</li>
+<li><span class="math">C_{out}</span> - N/A (not doing full addition; carry-out is irrelevant)</li>
+<li><span class="math">Q</span> - <span class="math">0</span> (<span class="math">\overline 1 = 0</span>)</li>
+</ul>
+<p>Quiz question - What are all the input/output values required to perform the operation 1 + 1 + 0?</p>
+<ul>
+<li><span class="math">F_0</span>, <span class="math">F_1</span> - 10 (enables full adder)</li>
+<li><span class="math">EN_A</span> - <span class="math">1</span> (we’re inputting <span class="math">A</span>)</li>
+<li><span class="math">A</span> - <span class="math">1</span> (first operand is <span class="math">1</span>)</li>
+<li><span class="math">INV_A</span> - <span class="math">0</span> (we aren’t inverting <span class="math">A</span>)</li>
+<li><span class="math">EN_B</span> - <span class="math">1</span> (we’re inputting <span class="math">B</span>)</li>
+<li><span class="math">B</span> - <span class="math">1</span> (second operand is <span class="math">1</span>)</li>
+<li><span class="math">C_{in}</span> - <span class="math">0</span> (doing full addition; carry-in is <span class="math">0</span>)</li>
+<li><span class="math">C_{out}</span> - <span class="math">1</span> (<span class="math">1 + 1 + 0 = 10_2</span> - carry out is <span class="math">1</span>)</li>
+<li><span class="math">Q</span> - <span class="math">0</span> (<span class="math">1 + 1 + 0 = 10_2</span> - output is 0)</li>
+</ul>
+<p>Quiz question - What are all the input/output values required to perform the operation 0 or 0?</p>
+<ul>
+<li><span class="math">F_0</span>, <span class="math">F_1</span> - 01 (enables OR)</li>
+<li><span class="math">EN_A</span> - <span class="math">1</span> (we’re inputting <span class="math">A</span>)</li>
+<li><span class="math">A</span> - <span class="math">0</span> (first operand is <span class="math">0</span>)</li>
+<li><span class="math">INV_A</span> - <span class="math">0</span> (we aren’t inverting <span class="math">A</span>)</li>
+<li><span class="math">EN_B</span> - <span class="math">1</span> (we’re inputting <span class="math">B</span>)</li>
+<li><span class="math">B</span> - <span class="math">1</span> (second operand is <span class="math">0</span>)</li>
+<li><span class="math">C_{in}</span> - N/A (not doing full addition; carry-in is irrelevant)</li>
+<li><span class="math">C_{out}</span> - N/A (not doing full addition; carry-out is irrelevant)</li>
+<li><span class="math">Q</span> - <span class="math">0</span> (<span class="math">0 + 0 = 0</span>)</li>
+</ul>
+<doc-anchor-target id="bit-shifters">
+    <h1>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#bit-shifters">#</doc-anchor-trigger>
+        <span>Bit Shifters</span>
+    </h1>
+</doc-anchor-target>
+<p>A <strong>bit shifter</strong> is a component that shifts bits.</p>
+<p>Say we’re shifting <span class="math">1101</span> one bit to the left.</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre class="language-none"><code v-pre class="language-none">1101
+
+_1101
+1101_ &lt;-- shift 1 bit left
+11010
+_1010
+
+1010</code></pre>
+</doc-codeblock></div>
+<p>The result is <span class="math">1010</span>.</p>
+<ul>
+<li>Shifting n bits to the left is similar to multiplying by 2n</li>
+<li>Shifting n bits to the right is similar to dividing by 2n</li>
+</ul>
+<p>This is what a bit shifter looks like:</p>
+<p><figure class="content-center">
+    <img src="../diagrams/21_bit_shifter.png" alt="Schematic of a bit shifter.">
+    <figcaption class="caption">Schematic of a bit shifter.</figcaption>
+</figure>
+</p>
+<p>Each <span class="math">D</span> (data) line is connected to two AND gates; one AND gate connects to the output bit to the left of it and the other connects to the output bit to the right of it.</p>
+<ul>
+<li>Ex: <span class="math">D_2</span> connects to <span class="math">S_1</span> and <span class="math">S_3</span></li>
+<li>Ex: <span class="math">D_4</span> connects to <span class="math">S_3</span> and <span class="math">S_5</span></li>
+</ul>
+<p>The AND gates enable that shift direction based on the <span class="math">C</span> (control) line’s parity (<span class="math">0</span> = left, <span class="math">1</span> = right).</p>
+<p>Each <span class="math">S</span> (shift) line has two <span class="math">D</span> lines connected to it (ex: <span class="math">S_3</span> is connected to <span class="math">D_2</span> and <span class="math">D_4</span>), the <span class="math">D</span> lines are sent into an OR gate before outputting. What&#x27;s nice is that only one of these inputs will be active at a time:</p>
+<ul>
+<li>If we’re shifting left, <span class="math">D_4</span> connects to <span class="math">S_3</span> and <span class="math">D_2</span> connects to <span class="math">S_1</span> instead of <span class="math">D_3</span>.</li>
+<li>If we’re shifting right, <span class="math">D_2</span> connects to <span class="math">S_3</span> and <span class="math">D_4</span> connects to <span class="math">S_5</span> instead of <span class="math">D_3</span>.</li>
+</ul>
+<p>Jason didn&#x27;t provide any questions on bit shifting in the videos.</p>
+
+                                
+                                <!-- Required only on API pages -->
+                                <doc-toolbar-member-filter-no-results></doc-toolbar-member-filter-no-results>
+                            </div>
+                            <footer class="clear-both">
+                            
+                                <nav class="flex mt-14">
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 h-full flex items-center break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-l-lg transition-colors duration-150 relative hover:z-5" href="../../../term-2-cst/comp-2721/ch4/">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="mr-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19 11H7.41l5.29-5.29a.996.996 0 10-1.41-1.41l-7 7a1 1 0 000 1.42l7 7a1.024 1.024 0 001.42-.01.996.996 0 000-1.41L7.41 13H19c.55 0 1-.45 1-1s-.45-1-1-1z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                            <span>
+                                                <span class="block text-xs font-normal text-gray-400 dark:text-dark-400">Previous</span>
+                                                <span class="block mt-1">Chapter 4: Mean Memory Access Time and Hard Drive Disks</span>
+                                            </span>
+                                        </a>
+                                    </div>
+                            
+                                    <div class="w-1/2">
+                                        <a class="px-5 py-4 -mx-px h-full flex items-center justify-end break-normal font-medium text-blue-500 dark:text-blue-400 border border-gray-300 hover:border-gray-400 dark:border-dark-650 dark:hover:border-dark-450 rounded-r-lg transition-colors duration-150 relative hover:z-5" href="../../../term-2-cst/comp-2721/gallery/">
+                                            <span>
+                                                <span class="block text-xs font-normal text-right text-gray-400 dark:text-dark-400">Next</span>
+                                                <span class="block mt-1">Gallery</span>
+                                            </span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="ml-3" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" overflow="visible"><path d="M19.92 12.38a1 1 0 00-.22-1.09l-7-7a.996.996 0 10-1.41 1.41l5.3 5.3H5c-.55 0-1 .45-1 1s.45 1 1 1h11.59l-5.29 5.29a.996.996 0 000 1.41c.19.2.44.3.7.3s.51-.1.71-.29l7-7c.09-.09.16-.21.21-.33z" /><path fill="none" d="M0 0h24v24H0z" /></svg>
+                                        </a>
+                                    </div>
+                                </nav>
+                            </footer>
+                        </main>
+                
+                        <div class="border-t dark:border-dark-650 pt-6 mb-8">
+                            <footer class="flex flex-wrap items-center justify-between">
+                                <div>
+                                    <ul class="flex flex-wrap items-center text-sm">
+                                    </ul>
+                                </div>
+                                <div class="docs-copyright py-2 text-gray-500 dark:text-dark-350 text-sm leading-relaxed"><p>lunaui powered, 2025. Not afilliated with BCIT Faculty.</p></div>
+                            </footer>
+                        </div>
+                    </div>
+                
+                    <!-- Rendered if sidebar right is enabled -->
+                    <!-- Sidebar right skeleton-->
+                    <div v-cloak class="fixed top-0 bottom-0 right-0 translate-x-full bg-white border-gray-200 lg:sticky lg:border-l lg:shrink-0 lg:pt-6 lg:transform-none sm:w-1/2 lg:w-64 lg:z-0 md:w-104 sidebar-right skeleton dark:bg-dark-850 dark:border-dark-650">
+                        <div class="pl-5">
+                            <div class="w-32 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-48 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                            <div class="w-40 h-3 mb-4 bg-gray-200 dark:bg-dark-600 rounded-full loading"></div>
+                        </div>
+                    </div>
+                
+                    <!-- User should be able to hide sidebar right -->
+                    <doc-sidebar-right v-cloak></doc-sidebar-right>
+                </div>
+
+            </div>
+        </div>
+    
+        <doc-search-mobile></doc-search-mobile>
+        <doc-back-to-top></doc-back-to-top>
+    </div>
+
+
+    <div id="docs-overlay-target"></div>
+
+    <script data-cfasync="false">window.__DOCS__ = { "title": "Chapter 5: Memory Chips and Logic Circuits", level: 3, icon: "file", hasPrism: false, hasMermaid: false, hasMath: true, tocDepth: 23 }</script>
+</body>
+</html>
