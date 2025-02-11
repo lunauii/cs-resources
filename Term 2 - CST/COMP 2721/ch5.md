@@ -379,7 +379,7 @@ What are all the input/output values required to read word 0 of a 4x3 memory chi
 - $A_0$, $A_1$ - 00 (Selecting address $00_2$ - address $0_{10}$ - word 0)
 - $I_0$, $I_1$, $I_2$ - N/A (we’re not writing; whatever this is set to is irrelevant)
 
-Quiz question - What are all the input/output values required to write 110 to word 1 of a 4x3 memory chip?
+What are all the input/output values required to write 110 to word 1 of a 4x3 memory chip?
 - CS - 1 (We want to select this chip)
 - RD - 0 (We’re not reading from this chip)
 - OE - N/A (We don’t need the output; whatever this is set to is irrelevant)
@@ -437,7 +437,7 @@ What are all the input/output values required to perform the operation 0 AND 1?
 - $C_{out}$ - N/A (not doing full addition; carry-out is irrelevant)
 - $Q$ - $0$ ($0 * 1 = 0$)
 
-Quiz question - What are all the input/output values required to perform the operation NOT 1?
+What are all the input/output values required to perform the operation NOT 1?
  - $F_0$, $F_1$ - 10 (enables NOT gate)
  - $EN_A$ - $0$ (we aren’t inputting $A$)
  - $A$ - N/A (using the NOT gate only uses the $B$ input)
@@ -448,7 +448,7 @@ Quiz question - What are all the input/output values required to perform the ope
  - $C_{out}$ - N/A (not doing full addition; carry-out is irrelevant)
  - $Q$ - $0$ ($\overline 1 = 0$)
 
-Quiz question - What are all the input/output values required to perform the operation 1 + 1 + 0?
+What are all the input/output values required to perform the operation 1 + 1 + 0?
  - $F_0$, $F_1$ - 10 (enables full adder)
  - $EN_A$ - $1$ (we’re inputting $A$)
  - $A$ - $1$ (first operand is $1$)
@@ -459,7 +459,7 @@ Quiz question - What are all the input/output values required to perform the ope
  - $C_{out}$ - $1$ ($1 + 1 + 0 = 10_2$ - carry out is $1$)
  - $Q$ - $0$ ($1 + 1 + 0 = 10_2$ - output is 0)
 
-Quiz question - What are all the input/output values required to perform the operation 0 or 0?
+What are all the input/output values required to perform the operation 0 or 0?
  - $F_0$, $F_1$ - 01 (enables OR)
  - $EN_A$ - $1$ (we’re inputting $A$)
  - $A$ - $0$ (first operand is $0$)
