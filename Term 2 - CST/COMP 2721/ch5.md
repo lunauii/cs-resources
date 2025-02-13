@@ -9,6 +9,7 @@ icon: git-pull-request-draft
 # Week 5: Memory Chips and Logic Circuits
 
 ## Terminology
+
 - **Latch** - A component that can write and store binary states
 
 - **SR Latch** (aka **Set/Reset Latch**) - A latch with two inputs; set and reset
@@ -91,7 +92,7 @@ $S$ | $R$ | $Q$ | $\overline Q$
 0 | 0 | Q | !Q
 0 | 1 | 0 | 1
 1 | 0 | 1 | 0
-1 | 1 | !! | !!
+1 | 1 | !!! | !!!
 
 The only stable state in this situation is $Q = \overline Q = 0$. This is not good, for two reasons:
 - $Q$ should NEVER be equal to its complement, as they're supposed to be opposites
@@ -166,7 +167,7 @@ Hold on this'll make sense if you look at it first
 
 ![An image of a pulse generator circuit.](./diagrams/13_pulse_generator.png)
 
-A NOT gate into an AND gate might look stupid. $A * \overline A = 0$, after all. While this is still true, there's a very short delay between the inputs of a logic gate and the output.
+A NOT gate into an AND gate might look redundant. $A * \overline A = 0$, after all. While this is still true, there's a very short delay between the inputs of a logic gate and the output.
 
 Say you're sending a $1$ through a NOT gate. There's going to be a very small, but existent delay between sending in that $1$ and getting a $0$ from the output. This circuit takes advantage of that delay. Check the timing in the figure.
 
@@ -179,7 +180,7 @@ $a$ | $b = \overline a$ | $c = a$ | $d = b * c$
 0 | 0 | 0 | 0
 0 | 0 | 0 | 0
 
-It's called a rising-edge trigger because, well, it triggers whenever there's a rising edge.
+It's called a rising-edge trigger because, well, it triggers whenever there's a rising edge in its input line.
 
 We can use this pulse for:
 - Sampling the state of a data line
@@ -188,7 +189,7 @@ We can use this pulse for:
 The clocks in clocked D latches shouldn’t be going off on their own; they should all be on/off at the same time. We can do that by connecting all of them to a single pulse generator.
 
 ## Flip-Flop
-A flip-flop is a circuit that alters its output whenever its clock line is set to $1$. This is in contrast to latches, which always altered their output whenever the data input changed.
+A **flip-flop** is a circuit that alters its output whenever its clock line is set to $1$. This is in contrast to latches, which always altered their output whenever the data input changed.
 
 A **D flip-flop** (or **data flip-flop**) is a combination of a clocked D latch and a pulse generator. 
 
@@ -290,7 +291,7 @@ Water high | Water hot | Water pressurized | Red | Green | Blue
 1 | 1 | 0 | 1 | 0 | 0
 1 | 1 | 1 | 1 | 0 | 1
 
-We'll need three multiplexers for three outputs, and connect the each data line to ground/power according to the truth table. I'd draw it out, but I don't feel like it.
+We'll need three multiplexers for three outputs, and connect each data line to ground/power according to the truth table. I'd draw it out, but I don't feel like it.
 
 # Decoders
 A **decoder** is a circuit that decodes an $n$ bits of input and outputs a single $1$ in one of $2^n$ data lines accordingly. Like multiplexers, decoders are combinational circuits.
@@ -376,15 +377,15 @@ What are all the input/output values required to read word 0 of a 4x3 memory chi
 - $CS$ - 1 (We want to select this chip)
 - $RD$ - 1 (We’re reading from this chip)
 - $OE$ - 1 (We need output in order to read from this chip)
-- $A_0$, $A_1$ - 00 (Selecting address $00_2$ - address $0_{10}$ - word 0)
+- $A_0$, $A_1$ - $00$ (Selecting address $00_2$ - address $0_{10}$ - word 0)
 - $I_0$, $I_1$, $I_2$ - N/A (we’re not writing; whatever this is set to is irrelevant)
 
 What are all the input/output values required to write 110 to word 1 of a 4x3 memory chip?
-- CS - 1 (We want to select this chip)
-- RD - 0 (We’re not reading from this chip)
-- OE - N/A (We don’t need the output; whatever this is set to is irrelevant)
-- $A_0$, $A_1$ - 00 (Selecting address $01_2$ - address $1_{10}$ - word 1)
-- $I_0$, $I_1$, $I_2$ - 110 (writing $110$ to the selected address)
+- $CS$ - $1$ (We want to select this chip)
+- $RD$ - $0$ (We’re not reading from this chip)
+- $OE$ - N/A (We don’t need the output; whatever this is set to is irrelevant)
+- $A_0$, $A_1$ - $00$ (Selecting address $01_2$ - address $1_{10}$ - word 1)
+- $I_0$, $I_1$, $I_2$ - $110$ (writing $110$ to the selected address)
 
 # Arithmetic Logic Units (ALUs)
 
@@ -438,7 +439,7 @@ What are all the input/output values required to perform the operation 0 AND 1?
 - $Q$ - $0$ ($0 * 1 = 0$)
 
 What are all the input/output values required to perform the operation NOT 1?
- - $F_0$, $F_1$ - 10 (enables NOT gate)
+ - $F_0$, $F_1$ - $10$ (enables NOT gate)
  - $EN_A$ - $0$ (we aren’t inputting $A$)
  - $A$ - N/A (using the NOT gate only uses the $B$ input)
  - $INV_A$ - N/A (we aren’t inputting $A$)
@@ -449,7 +450,7 @@ What are all the input/output values required to perform the operation NOT 1?
  - $Q$ - $0$ ($\overline 1 = 0$)
 
 What are all the input/output values required to perform the operation 1 + 1 + 0?
- - $F_0$, $F_1$ - 10 (enables full adder)
+ - $F_0$, $F_1$ - $10$ (enables full adder)
  - $EN_A$ - $1$ (we’re inputting $A$)
  - $A$ - $1$ (first operand is $1$)
  - $INV_A$ - $0$ (we aren’t inverting $A$)
@@ -460,7 +461,7 @@ What are all the input/output values required to perform the operation 1 + 1 + 0
  - $Q$ - $0$ ($1 + 1 + 0 = 10_2$ - output is 0)
 
 What are all the input/output values required to perform the operation 0 or 0?
- - $F_0$, $F_1$ - 01 (enables OR)
+ - $F_0$, $F_1$ - $01$ (enables OR)
  - $EN_A$ - $1$ (we’re inputting $A$)
  - $A$ - $0$ (first operand is $0$)
  - $INV_A$ - $0$ (we aren’t inverting $A$)
