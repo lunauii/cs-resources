@@ -1,3 +1,12 @@
+---
+author:
+    - name: felistachio
+      avatar: "https://avatars.githubusercontent.com/u/181042133?v=4"
+      link: "https://github.com/pnguyen72/"
+label: "Midterm guide"
+icon: info
+---
+
 ## Study tips
 
 ### Where's the lamb sauce?
