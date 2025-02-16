@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793032379596">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.793056152021">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.793032379596" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.793056152021" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.793032379596" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.793056152021" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.793032379596" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.793056152021" data-turbo-eval="false" defer></script>
 </head>
 <body>
     <div id="docs-app" class="relative text-base antialiased text-gray-700 bg-white font-body dark:bg-dark-850 dark:text-dark-300">
@@ -302,7 +302,7 @@ so I&#x27;ll go over them in reverse order.</p>
 <p>An entity is like a class, attributes are like instance variables.</p>
 <p>An identifier is an attribute or group of attributes that uniquely identifies a particular instance of the entity. For example with the Student entity, the student number can be the identifier. The social insurance number can also be the identifier. Or perhaps the combination of last name, first name, and date of birth (if you&#x27;re sure the combination is unique for every student).</p>
 <p>But <strong>each entity has ONLY ONE identifier</strong>, no exceptions! When designing an ERD, if there are multiple candidates for the identifier, you must choose one.</p>
-<p>An identifier that is a combination of multiple attributes is called a <em>concatenated identifier</em>. Suppose you give the Student entity a concatenated identifier of last name + first name + dob. It does NOT mean this entity has multiple identifiers. Last name is not an identifier, first name is not an identifier, dob is not an identifier. Only the <em>combination</em> of them is <em>the</em> identifier.</p>
+<p>Suppose you make Student&#x27;s identifier the combination of last name + first name + dob. It does NOT mean this entity has multiple identifiers. Last name is not an identifier, first name is not an identifier, dob is not an identifier. Only the <em>combination</em> of them is <em>the</em> identifier.</p>
 <p>When modelling a many-to-many relationship, it&#x27;s best practice to
 break it into 2 one-to-many relationships.</p>
 <p><figure class="content-center">
