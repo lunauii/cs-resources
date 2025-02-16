@@ -1,9 +1,11 @@
 ---
 author:
-    - name: felistachio
-      avatar: "https://avatars.githubusercontent.com/u/181042133?v=4"
-      link: "https://github.com/pnguyen72/"
+  - name: felistachio
+    avatar: "https://avatars.githubusercontent.com/u/181042133?v=4"
+    link: "https://github.com/pnguyen72/"
 label: "Midterm guide"
+description: "Study tips and what to look out for in each module."
+image: https://quiz.comp1712.ca/images/license.png
 icon: info
 ---
 
