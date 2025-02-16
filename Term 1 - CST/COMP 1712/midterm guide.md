@@ -99,7 +99,7 @@ An identifier is an attribute or group of attributes that uniquely identifies a 
 
 But **each entity has ONLY ONE identifier**, no exceptions! When designing an ERD, if there are multiple candidates for the identifier, you must choose one.
 
-An identifier that is a combination of multiple attributes is called a **concatenated identifier**. Suppose you give the Student entity a concatenated identifier of last name + first name + dob. It does NOT mean this entity has multiple identifiers. Last name is not an identifier, first name is not an identifier, dob is not an identifier. Only the _combination_ of them is _the_ identifier.
+An identifier that is a combination of multiple attributes is called a *concatenated identifier*. Suppose you give the Student entity a concatenated identifier of last name + first name + dob. It does NOT mean this entity has multiple identifiers. Last name is not an identifier, first name is not an identifier, dob is not an identifier. Only the _combination_ of them is _the_ identifier.
 
 When modelling a many-to-many relationship, it's best practice to
 break it into 2 one-to-many relationships.
@@ -109,7 +109,7 @@ break it into 2 one-to-many relationships.
 ![2 one-to-many relationships, with an intersection entity (Friendship)](images/intersection.png)
 
 The identifier of the intersection entity is usually the combination
-of the identifiers of the entities it's associated with. In this case, Friendship's identifier is `Student1_ID + Student2_ID`. But remember **each entity has ONLY ONE identifier!** `Student1_ID` and `Student2_ID` are identifiers of the Student entity, but they are not identifiers of the Friendship entity, Only their _combination_ is _the_ identifier of the Friendship entity.
+of the identifiers of the entities it's associated with. In this case, Friendship's identifier is `Student1_ID + Student2_ID`. But remember **each entity has ONLY ONE identifier!** `Student1_ID` and `Student2_ID` are identifiers of the Student entity, but they are not identifiers of the Friendship entity. Only their _combination_ is _the_ identifier of the Friendship entity.
 
 In this module there is one point where Maryam disagrees with the textbook authors: the order by which you create ERD.
 
