@@ -35,7 +35,7 @@ Sometimes Maryam disagrees with the authors, always go with Maryam's version.
 
 - [Shivaun's notes](https://shiv-bartoo.notion.site/Systems-Analysis-and-Design-8th-Edition-0f7bf214448b4171bf6f21956706b22c#42a0e0a4906f4023b8e1f3ef5d0a9ec4)
 - [COMP 1712 Bible](https://docs.google.com/document/d/1MOVpEVdHEbigwvpJk2h_6VJ49L0uOAlseSyCwteGMNc)
-  (crowdsourced notes, everyone is welcome to contribute)
+  (our intake's crowdsourced notes)
 
 Shivaun's notes are consistently good,
 while the Bible's quality and writing style often vary.
