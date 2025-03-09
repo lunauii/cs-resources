@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794818451276">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794869727613">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.794818451276" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.794869727613" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.794818451276" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.794869727613" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.794818451276" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.794869727613" data-turbo-eval="false" defer></script>
     <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
@@ -248,10 +248,10 @@ Memory request is assered when <em>both</em> (a) and (b) are met.</li>
 <li><p>Find how long from the beginning to when memory request is asserted.</p>
 <ul>
 <li><span class="math">MREQ</span> requires 2 conditions: (a) <span class="math">T_{ML}</span> has passed since address is stable, and (b) <span class="math">T_{M}</span> has passes since the falling edge of the first cycle.</li>
-<li>(a) = <span class="math">T_{AD} + T_{ML}</span></li>
-<li>(b) = duration of half a cycle + <span class="math">T_{M}</span></li>
-<li>Therefore, <span class="math">T_{MREQ}\ =\ \text{max}(T_{AD} + T_{ML}, \text{ duration of half a cycle} + T_{M})</span> <br>
-(max because <em>both</em> conditions must be satisfied).</li>
+<li>(a) Address is stable after <span class="math">T_{AD}</span>. So <span class="math">a = T_{AD} + T_{ML}</span></li>
+<li>(b) The falling edge of the first cycle occurs after half the duration of <span class="math">T_1</span> (see the diagram). So <span class="math">b = \text{duration of half a cycle} + T_{M}</span></li>
+<li><span class="math">\implies T_{MREQ}\ =\ \text{max}(T_{AD} + T_{ML}, \text{ duration of half a cycle} + T_{M})</span> <br>
+(We take the max because <em>both</em> conditions must be satisfied).</li>
 </ul>
 </li>
 <li><p>Data must be ready <span class="math">T_{DS}</span> before it&#x27;s read.</p>
