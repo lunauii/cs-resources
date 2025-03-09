@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794869727613">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.6.0.794875082600">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.6.0">
@@ -32,11 +32,11 @@
 
     <script data-cfasync="false">(function () { var el = document.documentElement, m = localStorage.getItem("doc_theme"), wm = window.matchMedia; if (m === "dark" || (!m && wm && wm("(prefers-color-scheme: dark)").matches)) { el.classList.add("dark") } else { el.classList.remove("dark") } })();</script>
 
-    <link href="../../../resources/css/retype.css?v=3.6.0.794869727613" rel="stylesheet">
+    <link href="../../../resources/css/retype.css?v=3.6.0.794875082600" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.794869727613" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../../resources/js/config.js?v=3.6.0.794875082600" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../../resources/js/retype.js?v=3.6.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.794869727613" data-turbo-eval="false" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../../resources/js/lunr.js?v=3.6.0.794875082600" data-turbo-eval="false" defer></script>
     <link href="../../../resources/css/katex.css?v=3.6.0" rel="stylesheet">
     <script id="katex-js" data-cfasync="false" src="../../../resources/js/katex.js?v=3.6.0" defer></script>
 </head>
@@ -267,7 +267,7 @@ Memory request is assered when <em>both</em> (a) and (b) are met.</li>
 <p>Given:</p>
 <ul>
 <li>There is one wait state.</li>
-<li>Bus frequency is 400 MHz</li>
+<li>Bus frequency is 40 MHz</li>
 <li><span class="math">T_{AD} = 1ns</span></li>
 <li><span class="math">T_{ML} = 2ns</span></li>
 <li><span class="math">T_{M} = 3ns</span></li>
@@ -279,7 +279,7 @@ Memory request is assered when <em>both</em> (a) and (b) are met.</li>
         <span>How long does memory have to fetch the word from when address is stable?</span>
     </h4>
 </doc-anchor-target>
-<p>400 MHz frequency ==&gt; 25 ns/cycle.</p>
+<p>40 MHz frequency ==&gt; 25 ns/cycle.</p>
 <p>1 wait state ==&gt; total time is 2.5 cycles = 2.5(25) = 62.5 ns.</p>
 <p><strong>Answer:</strong> Total time - <span class="math">T_{AD}</span> - <span class="math">T_{DS}</span> = 62.5 - 1 - 5 = <strong>56.5 ns</strong>.</p>
 <doc-anchor-target id="how-long-does-memory-have-to-fetch-the-word-from-when-memory-request-is-asserted-1">
