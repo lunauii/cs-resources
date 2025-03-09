@@ -62,7 +62,7 @@ You will be given the bus frequency, from which you can calculate the duration o
 Given:
 
 -   There is one wait state.
--   Bus frequency is 400 MHz
+-   Bus frequency is 40 MHz
 -   $T_{AD} = 1ns$
 -   $T_{ML} = 2ns$
 -   $T_{M} = 3ns$
@@ -70,7 +70,7 @@ Given:
 
 #### How long does memory have to fetch the word from when address is stable?
 
-400 MHz frequency ==> 25 ns/cycle.
+40 MHz frequency ==> 25 ns/cycle.
 
 1 wait state ==> total time is 2.5 cycles = 2.5(25) = 62.5 ns.
 
