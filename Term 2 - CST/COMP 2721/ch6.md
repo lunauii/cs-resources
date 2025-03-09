@@ -4,6 +4,7 @@ author:
       avatar: "https://avatars.githubusercontent.com/u/181042133?v=4"
       link: "https://github.com/pnguyen72/"
 label: "Week 6: Synchronous Bus"
+description: ""
 image: https://quiz.comp1712.ca/images/license.png
 icon: info
 ---
