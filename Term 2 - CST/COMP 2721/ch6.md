@@ -48,10 +48,10 @@ You will be given the bus frequency, from which you can calculate the duration o
 2. Find how long from the beginning to when memory request is asserted.
 
     - $MREQ$ requires 2 conditions: (a) $T_{ML}$ has passed since address is stable, and (b) $T_{M}$ has passes since the falling edge of the first cycle.
-    - (a) = $T_{AD} + T_{ML}$
-    - (b) = duration of half a cycle + $T_{M}$
-    - Therefore, $T_{MREQ}\ =\ \text{max}(T_{AD} + T_{ML}, \text{ duration of half a cycle} + T_{M})$ <br>
-      (max because _both_ conditions must be satisfied).
+    - (a) Address is stable after $T_{AD}$. So $a = T_{AD} + T_{ML}$
+    - (b) The falling edge of the first cycle occurs after half the duration of $T_1$ (see the diagram). So $b = \text{duration of half a cycle} + T_{M}$
+    - $\implies T_{MREQ}\ =\ \text{max}(T_{AD} + T_{ML}, \text{ duration of half a cycle} + T_{M})$ <br>
+      (We take the max because _both_ conditions must be satisfied).
 
 3. Data must be ready $T_{DS}$ before it's read.
 
