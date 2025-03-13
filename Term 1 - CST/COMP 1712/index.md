@@ -1,5 +1,5 @@
 ---
-label: COMP 2714
+label: COMP 1712
 icon: database
 ---
 # Business Analysis and System Design
